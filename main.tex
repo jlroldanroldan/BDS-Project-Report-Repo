@@ -4,6 +4,7 @@
 % The ACM Latex guide provides further information about the ACM template
 
 \documentclass[sigconf, nonacm]{acmart}
+\usepackage{soul}
 
 %% The following content must be adapted for the final version
 % paper-specific
@@ -22,7 +23,7 @@
 \newcommand\vldbpagestyle{plain} 
 
 \begin{document}
-\title{Green Investing using Alternative Data}
+\title{Green Investing using Alternative Data Sources}
 
 %%
 %% The "author" command and its associated commands are used to define the authors and their affiliations.
@@ -39,28 +40,18 @@
 }
 \email{jlr9718@nyu.edu}
 
-\author{Antonny Sunwoo}
+\author{Antony Sunwoo}
 \orcid{0000-0001-5109-3700}
 \affiliation{%
-  \institution{Inria Paris-Rocquencourt}
-  \city{Rocquencourt}
-  \country{France}
+  \institution{New York University}
 }
-\email{vb@rocquencourt.com}
+\email{???@nyu.edu}
 
-
-\affiliation{%
-  \institution{Donald's Second Affiliation}
-  \city{City}
-  \country{country}
-}
-\email{donald@swa.edu}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-
 
 
 The project report should include an abstract, introduction and a literature review on related works and papers on your project. Then the following sections should follow the CRISP-DM: Data understanding (describe your data, data sources, relevance to your project), Business Understanding (problem statement, how your approach relates to solving a problem or experimenting a hypothesis...), Data Preparation (algorithms, data reduction, ....), Modeling, Evaluation and Deployment (if applicable..) 
@@ -70,52 +61,56 @@ The project report should include an abstract, introduction and a literature rev
 
 \maketitle
 
-%%% do not modify the following VLDB block %%
-%%% VLDB block start %%%
-\pagestyle{\vldbpagestyle}
-\begingroup\small\noindent\raggedright\textbf{PVLDB Reference Format:}\\
-\vldbauthors. \vldbtitle. PVLDB, \vldbvolume(\vldbissue): \vldbpages, \vldbyear.\\
-\href{https://doi.org/\vldbdoi}{doi:\vldbdoi}
-\endgroup
-\begingroup
-\renewcommand\thefootnote{}\footnote{\noindent
-This work is licensed under the Creative Commons BY-NC-ND 4.0 International License. Visit \url{https://creativecommons.org/licenses/by-nc-nd/4.0/} to view a copy of this license. For any use beyond those covered by this license, obtain permission by emailing \href{mailto:info@vldb.org}{info@vldb.org}. Copyright is held by the owner/author(s). Publication rights licensed to the VLDB Endowment. \\
-\raggedright Proceedings of the VLDB Endowment, Vol. \vldbvolume, No. \vldbissue\ %
-ISSN 2150-8097. \\
-\href{https://doi.org/\vldbdoi}{doi:\vldbdoi} \\
-}\addtocounter{footnote}{-1}\endgroup
-%%% VLDB block end %%%
 
-%%% do not modify the following VLDB block %%
-%%% VLDB block start %%%
-\ifdefempty{\vldbavailabilityurl}{}{
-\vspace{.3cm}
-\begingroup\small\noindent\raggedright\textbf{PVLDB Artifact Availability:}\\
-The source code, data, and/or other artifacts have been made available at \url{\vldbavailabilityurl}.
-\endgroup
-}
-%%% VLDB block end %%%
+% %%% do not modify the following VLDB block %%
+% %%% VLDB block start %%%
+% \pagestyle{\vldbpagestyle}
+% \begingroup\small\noindent\raggedright\textbf{PVLDB Reference Format:}\\
+% \vldbauthors. \vldbtitle. PVLDB, \vldbvolume(\vldbissue): \vldbpages, \vldbyear.\\
+% \href{https://doi.org/\vldbdoi}{doi:\vldbdoi}
+% \endgroup
+% \begingroup
+% \renewcommand\thefootnote{}\footnote{\noindent
+% This work is licensed under the Creative Commons BY-NC-ND 4.0 International License. Visit \url{https://creativecommons.org/licenses/by-nc-nd/4.0/} to view a copy of this license. For any use beyond those covered by this license, obtain permission by emailing \href{mailto:info@vldb.org}{info@vldb.org}. Copyright is held by the owner/author(s). Publication rights licensed to the VLDB Endowment. \\
+% \raggedright Proceedings of the VLDB Endowment, Vol. \vldbvolume, No. \vldbissue\ %
+% ISSN 2150-8097. \\
+% \href{https://doi.org/\vldbdoi}{doi:\vldbdoi} \\
+% }\addtocounter{footnote}{-1}\endgroup
+% %%% VLDB block end %%%
 
+% %%% do not modify the following VLDB block %%
+% %%% VLDB block start %%%
+% \ifdefempty{\vldbavailabilityurl}{}{
+% \vspace{.3cm}
+% \begingroup\small\noindent\raggedright\textbf{PVLDB Artifact Availability:}\\
+% The source code, data, and/or other artifacts have been made available at \url{\vldbavailabilityurl}.
+% \endgroup
+% }
+% %%% VLDB block end %%%
+
+
+
+% ========================================================
+% ========================================================
 \section{Introduction}
+% ========================================================
+% ========================================================
+\hl{Must finish}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a arcu quis arcu malesuada ultricies vitae in felis. Curabitur porta lacus at felis viverra hendrerit in non eros. Nam tempus tincidunt metus vitae fermentum. Donec sed risus felis. Cras luctus massa elementum, semper urna vel, efficitur ipsum. Morbi at tellus libero.
-
-Praesent imperdiet, lacus nec varius placerat, est ex eleifend justo, a vulputate leo massa consectetur nunc. Donec posuere in mi ut tempus. Pellentesque sem odio, faucibus non mi in, laoreet maximus arcu. In hac habitasse platea dictumst. Nunc euismod neque eu urna accumsan, vitae vehicula metus tincidunt. Maecenas congue tortor nec varius pellentesque. Pellentesque bibendum libero ac dignissim euismod. Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit amet sollicitudin est. 
-
+% ========================================================
+% ========================================================
 \section{Literature Review}
+% ========================================================
+% ========================================================
+\hl{Must finish}
 
-Nulla placerat feugiat augue, id blandit urna pretium nec. Nulla velit sem, tempor vel mauris ut, porta commodo quam. Donec lectus erat, sodales eu mauris eu, fringilla vestibulum nisl. Morbi viverra tellus id lorem faucibus cursus. Quisque et orci in est faucibus semper vel a turpis. Vivamus posuere sed ligula et. 
 
-\subsection{Figures}
-
-Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit amet sollicitudin est. Etiam ullamcorper diam a sapien lacinia faucibus. Duis vulputate, nisl nec tincidunt volutpat, erat orci eleifend diam, eget semper risus est eget nisl. Donec non odio id neque pharetra ultrices sit amet id purus. Nulla non dictum tellus, id ullamcorper libero. Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum facilisis elit vitae egestas. Nam vulputate est non tellus efficitur pharetra. Vestibulum ligula est, varius in suscipit vel, porttitor id massa. Nulla placerat feugiat augue, id blandit urna pretium nec. Nulla velit sem, tempor vel mauris ut, porta commodo quam \autoref{fig:duck}.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{figures/duck}
-  \caption{An illustration of a Mallard Duck. Picture from Mabel Osgood Wright, \textit{Birdcraft}, published 1897.}
-  \label{fig:duck}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\linewidth]{figures/duck}
+%   \caption{An illustration of a Mallard Duck. Picture from Mabel Osgood Wright, \textit{Birdcraft}, published 1897.}
+%   \label{fig:duck}
+% \end{figure}
 
 \begin{table*}[t]
   \caption{A double column table.}
@@ -131,18 +126,55 @@ Aliquam justo ante, pretium vel mollis sed, consectetur accumsan nibh. Nulla sit
   \end{tabular}
 \end{table*}
 
+% ========================================================
+% ========================================================
 \section{Project Developement: Methodology-CRISP-DM}
-CRISP-DM overview with our project
+% ========================================================
+% ========================================================
+\hl{Must finish}
+
+
+% ========================================================
 \subsection{Business Understanding}
+% ========================================================
+\hl{Must finish}
+
+% ========================================================
 \subsection{Data Understanding}
+% ========================================================
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{word_cloud_example.png}
+  \caption{Word cloud example}
+%   \label{fig:duck}
+\end{figure}
+
+% ========================================================
 \subsection{Data Preparation}
+% ========================================================
+
+
+% ========================================================
 \subsection{Modelling}
+% ========================================================
+
+
+% ========================================================
 \subsection{Evaluation}
-\subsection{Deployment}
-
-Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum facilisis elit vitae egestas. Mauris porta, neque non rutrum efficitur, odio odio faucibus tortor, vitae imperdiet metus quam vitae eros. Proin porta dictum accumsan \autoref{tab:commands}.
+% ========================================================
 
 
+% ========================================================
+% \subsection{Deployment}
+% ========================================================
+
+
+\newpage
+% ========================================================
+% ========================================================
+\section{Latex Template Info - MUST ERASE}
+% ========================================================
+% ========================================================
 \begin{table}[hb]% h asks to places the floating element [h]ere.
   \caption{Frequency of Special Characters}
   \label{tab:freq}
@@ -158,11 +190,9 @@ Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum f
 \end{tabular}
 \end{table}
 
-Nulla sit amet enim tortor. Ut non felis lectus. Aenean quis felis faucibus, efficitur magna vitae. Curabitur ut mauris vel augue tempor suscipit eget eget lacus. Sed pulvinar lobortis dictum. Aliquam dapibus a velit.
 
 \subsection{Listings and Styles}
 
-Aenean malesuada fringilla felis, vel hendrerit enim feugiat et. Proin dictum ante nec tortor bibendum viverra. Curabitur non nibh ut mauris egestas ultrices consequat non odio.
 
 \begin{itemize}
 \item Duis lacinia mollis purus, ac aliquet arcu dignissim ac. Vivamus accumsan sollicitudin dui, sed porta sem consequat.
