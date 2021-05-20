@@ -516,7 +516,7 @@ A distributed lag model is a model for time series data in which a regression eq
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
-  \caption{Significant Pace of Volatility in all green energy comapanies in later half of 2020}
+  \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
 %   \label{fig:duck}
 \end{figure}
 
@@ -652,98 +652,6 @@ This figure has been repeated to explain that in here we can observe that some t
 
 
 % --------------------------------------------------------
-\subsection{TF-IDF: Term frequency–inverse document frequency} 
-% --------------------------------------------------------
-We also performed $TF\_IDF$ to get key word extraction, the results are as below and this can be further used to develop more insightful analysis but for this project due to limited time we plan on making use of it creatively for extension of the project to new aspects.
-
-\newline 
-Top 20 key words for each company have been computed but it varies depending on the importance returned, they might be and usually were less than 20.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth, height =1.5in ]{all_tfidf.png}
-  \caption{TF-IDF - All companies}
-%   \label{fig:duck}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth, , height =1.5in]{first_solartfidf.png}
-  \caption{TF-IDF - First Solar}
-%   \label{fig:duck}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth, height =1.5in]{plug_powertfidf.png}
-  \caption{TF-IDF - Plug Power}
-%   \label{fig:duck}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth, height =1.5in]{sunpowertfidf.png}
-  \caption{TF-IDF - Sun Power}
-%   \label{fig:duck}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth, height =1.5in]{sunruntfidf.png}
-  \caption{TF-IDF - Sun Run}
-%   \label{fig:duck}
-\end{figure}
-
-
-
-% --------------------------------------------------------
-\subsection{Granger Causality} 
-% --------------------------------------------------------
-The Granger causality results are presented in figures \ref{granger_first_solar} to \ref{granger_sunpower}. For each of the companies we did four F-tests. We used compound, positive, negative sentiment, as well as daily tweets to determine whether each series Granger causes the closing prices. The determine whether one of these series Granger causes closing prices, we looked for lag values which have a very low p value $(p < 0.05)$. Those lag with their respective $p$ and $F$ values are shown in the figures  \ref{granger_first_solar} to \ref{granger_sunpower}. \newline
-For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.5$.
-
-
-\subsubsection{Granger Causality Results}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{granger_results/granger_first_solar.png}
-  \caption{Granger Results - First Solar}
-  \label{granger_first_solar}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{granger_results/granger_siemens.png}
-  \caption{Granger Results - Siemens}
-  \label{granger_siemens}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{granger_results/granger_sunrun.png}
-  \caption{Granger Results - Sunrun}
-  \label{granger_sunrun}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{granger_results/granger_plug.png}
-  \caption{Granger Results - Plug Power}
-  \label{granger_plug}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{granger_results/granger_sunpower.png}
-  \caption{Granger Results - Sunpower}
-  \label{granger_sunpower}
-\end{figure}
-
-
-\subsubsection{Discussion for Granger Causality analysis:}
-
-
-
-% ========================================================
-\section{Evaluation}
-% ========================================================
-% --------------------------------------------------------
 \subsection{Time Series Plots Vs Stock Prices} 
 % --------------------------------------------------------
 
@@ -829,6 +737,92 @@ For each company, different series Granger causes the closing prices at differen
 \end{subfigure}
 \caption{Sentiment and Closing Prices Time Series Part 2}
 \end{figure}
+
+
+
+% --------------------------------------------------------
+\subsection{Granger Causality} 
+% --------------------------------------------------------
+The Granger causality results are presented in figures \ref{granger_first_solar} to \ref{granger_sunpower}. For each of the companies we did four F-tests. We used compound, positive, negative sentiment, as well as daily tweets to determine whether each series Granger causes the closing prices. The determine whether one of these series Granger causes closing prices, we looked for lag values which have a very low p value $(p < 0.05)$. Those lag with their respective $p$ and $F$ values are shown in the figures  \ref{granger_first_solar} to \ref{granger_sunpower}. \newline
+For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one for all of the companies. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.5$.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{granger_results/granger_first_solar.png}
+  \caption{Granger Results - First Solar}
+  \label{granger_first_solar}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{granger_results/granger_siemens.png}
+  \caption{Granger Results - Siemens}
+  \label{granger_siemens}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{granger_results/granger_sunrun.png}
+  \caption{Granger Results - Sunrun}
+  \label{granger_sunrun}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{granger_results/granger_plug.png}
+  \caption{Granger Results - Plug Power}
+  \label{granger_plug}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{granger_results/granger_sunpower.png}
+  \caption{Granger Results - Sunpower}
+  \label{granger_sunpower}
+\end{figure}
+
+
+\subsubsection{Discussion for Granger Causality analysis:}
+
+% --------------------------------------------------------
+\subsection{TF-IDF: Term frequency–inverse document frequency} 
+% --------------------------------------------------------
+We also performed $TF\_IDF$ to get key word extraction, the results are as below and this can be further used to develop more insightful analysis but for this project due to limited time we plan on making use of it creatively for extension of the project to new aspects.
+
+\newline 
+Top 20 key words for each company have been computed but it varies depending on the importance returned, they might be and usually were less than 20.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in ]{all_tfidf.png}
+  \caption{TF-IDF - All companies}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, , height =1.5in]{first_solartfidf.png}
+  \caption{TF-IDF - First Solar}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{plug_powertfidf.png}
+  \caption{TF-IDF - Plug Power}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{sunpowertfidf.png}
+  \caption{TF-IDF - Sun Power}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{sunruntfidf.png}
+  \caption{TF-IDF - Sun Run}
+%   \label{fig:duck}
+\end{figure}
+
 
 
 
