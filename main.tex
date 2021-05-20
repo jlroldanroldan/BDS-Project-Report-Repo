@@ -412,6 +412,35 @@ To perform downstream tasks such as sentiment analysis, the text data from Twitt
 Using the cleaned text data from above, for each entry in the Twitter and news article data we also created a field for sentiment. Using the NLTK SentimentIntensity Analyizer, we found the sentiment for each body of text. These were used to construct time series in modeling.
 \hl{double check}
 
+% --------------------------------------------------------
+\subsection{Sentiment Analysis} 
+% --------------------------------------------------------
+The branch of Data Mining corresponding to use of machine learning algorithms to categorize various input samples of relevant text into the dominant and underlying contextual sentiment or notion that characterizes the tone of the text. A sentence “The movie was not bad at all” contains words like bad but the context and underlying notion of it contextually is rather a positive comment regarding it the subject under discussion, hence sentiment analysis makes use of ML techniques, applied strategically and efficiently to classify the text into certain categories of sentiment/nature of the text. Most commonly positive or negative sentiment.
+For our project we aimed to experiment and maximize the best approximation by going through various options available in the open-source community but ended up testing two sentiment analyzer tool options available and known as the best ones yet. We chose to employ some of the well established and well known pre-trained sentiment analyzer model available as open-source tools. These included
+\begin{enumerate}
+    \item Natural Language Tool Kit Sentiment Analyzer for python
+    \item Stanford CoreNLP sentiment analyzer
+\end{enumerate}
+
+\paragraph{NLTK}
+A powerful built-in machine learning operation to obtain insights from linguistic data. It is an open-source library available for python, it is designed to work with human language data making sentiment analysis a necessary tool of it. It provides the complete set of tools required for contextual mining and hence very popular and known for its performance among the text mining community and industry. To be specific we used the \textbf{SentimentIntensityAnalyzer} model instance followed by the polarity score measures it computes.
+\\Returned Polarity measures per text sample:
+\begin{enumerate}
+    \item Positive Sentiment - between 0 and 1 with zero being lowest positivity score and 1 being highest
+    \item Negative Sentiment : between 0 and 1 with zero being lowest positivity score and 1 being highest
+    \item Compound Sentiment: Less then zero signifies negative sentiment and greater than zero signifies positive sentiment. 0 score value here corresponds to neutral sentiment
+    \item Neutral Sentiment
+\end{enumerate}
+We chose to construct time series for Positive, Negative and Compound sentiments to maximize the potential for finding some useful correlation with any of the three. Neutral Sentiment measure was redundant hence not used further.
+
+\paragraph{Stanford CoreNLP}
+CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the CoreNLP instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
+\begin{enumerate}
+    \item Slow speed
+    \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines
+\end{enumerate}
+
+
 \subsubsection{Stock Price Data}
 Using the "High" and "Low" field in every record, we created a new field "Delta"
 
@@ -434,26 +463,6 @@ An integrated model comprising of multiple modeling sub-components has been used
 \hl{Must finish}
 
 
-% --------------------------------------------------------
-\subsection{Sentiment Analysis} 
-% --------------------------------------------------------
-The branch of Data Mining corresponding to use of machine learning algorithms to categorize various input samples of relevant text into the dominant and underlying contextual sentiment or notion that characterizes the tone of the text. A sentence “The movie was not bad at all” contains words like bad but the context and underlying notion of it contextually is rather a positive comment regarding it the subject under discussion, hence sentiment analysis makes use of ML techniques, applied strategically and efficiently to classify the text into certain categories of sentiment/nature of the text. Most commonly positive or negative sentiment.
-For our project we aimed to experiment and maximize the best approximation by going through various options available in the open-source community but ended up testing two sentiment analyzer tool options available and known as the best ones yet. We chose to employ some of the well established and well known pre-trained sentiment analyzer model available as open-source tools. These included
-\begin{enumerate}
-    \item Natural Language Tool Kit Sentiment Analyzer for python
-    \item Stanford CoreNLP sentiment analyzer
-\end{enumerate}
-
-\subsubsection{NLTK}
-A powerful built-in machine learning operation to obtain insights from linguistic data. It is an open-source library available for python, it is designed to work with human language data making sentiment analysis a necessary tool of it. It provides the complete set of tools required for contextual mining and hence very popular and known for its performance among the text mining community and industry. To be specific we used the \textbf{SentimentIntensityAnalyzer} model instance followed by the polarity score measures it computes.
-\\Returned Polarity measures per text sample:
-\begin{enumerate}
-    \item Positive Sentiment - between 0 and 1 with zero being lowest positivity score and 1 being highest
-    \item Negative Sentiment : between 0 and 1 with zero being lowest positivity score and 1 being highest
-    \item Compound Sentiment: Less then zero signifies negative sentiment and greater than zero signifies positive sentiment. 0 score value here corresponds to neutral sentiment
-    \item Neutral Sentiment
-\end{enumerate}
-We chose to construct time series for Positive, Negative and Compound sentiments to maximize the potential for finding some useful correlation with any of the three. Neutral Sentiment measure was redundant hence not used further.
 
 % --------------------------------------------------------
 \subsection{Explore Data Analysis 2 - Explore sentiment data individually} % data exploration report 
@@ -482,12 +491,7 @@ We chose to construct time series for Positive, Negative and Compound sentiments
 
 
 
-\subsubsection{Stanford CoreNLP}
-CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the CoreNLP instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
-\begin{enumerate}
-    \item Slow speed
-    \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines
-\end{enumerate}
+
 
 % --------------------------------------------------------
 \subsection{Popularity Time Series} 
@@ -541,7 +545,7 @@ This figure has been repeated to explain that in here we can observe that some t
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/fslr_100_pos.png}
-  \caption{First Solar - Positive Vs CLosing Price - Max Lag =100}
+  \caption{First Solar - Positive Vs Closing Price - Max Lag =100}
 %   \label{fig:duck}
 \end{figure}
 
@@ -690,7 +694,8 @@ Top 20 key words for each company have been computed but it varies depending on 
 % --------------------------------------------------------
 \subsection{Granger Causality} 
 % --------------------------------------------------------
-The Granger causality results are presented in figures \ref{granger_first_solar} to \ref{granger_sunpower}. 
+The Granger causality results are presented in figures \ref{granger_first_solar} to \ref{granger_sunpower}. For each of the companies we did four F-tests. We used compound, positive, negative sentiment, as well as daily tweets to determine whether each series Granger causes the closing prices. The determine whether one of these series Granger causes closing prices, we looked for lag values which have a very low p value $(p < 0.05)$. Those lag with their respective $p$ and $F$ values are shown in the figures  \ref{granger_first_solar} to \ref{granger_sunpower}. \newline
+For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.5$.
 
 
 \subsubsection{Granger Causality Results}
