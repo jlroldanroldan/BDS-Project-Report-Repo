@@ -113,45 +113,15 @@ The project report should include an abstract, introduction and a literature rev
 \section{Literature Review}
 % ========================================================
 % ========================================================
-\hl{Must finish - END}
-
-This is a cite from \cite{8713246}
-
-
-% \begin{table*}[t]
-%   \caption{A double column table.}
-%   \label{tab:commands}
-%   \begin{tabular}{ccl}
-%     \toprule
-%     A Wide Command Column & A Random Number & Comments\\
-%     \midrule
-%     \verb|\tabular| & 100& The content of a table \\
-%     \verb|\table|  & 300 & For floating tables within a single column\\
-%     \verb|\table*| & 400 & For wider floating tables that span two columns\\
-%     \bottomrule
-%   \end{tabular}
-% \end{table*}
-
-% % ========================================================
-% % ========================================================
-% \section{Project Developement: Methodology-CRISP-DM}
-% % ========================================================
-% % ========================================================
-% \hl{Must finish}
-
+The usage of alternative data sources such as Twitter feeds, news articles and search queries for predicting financial markets has been increasingly receiving attention in industry and academia. The authors in \cite{DBLP:journals/corr/abs-1010-3003} have used used Twitter feeds to investigate the correlation between the public mood and the value of the Dow Jones Industrial average. They used Opinion Finder (OF) and Google-Profile of Mood States (GPOMS) to track the sentiment mood collective mood. The authors also used a Granger causality analysis and Self-Organizing Fuzzy Neural Network to determine whether the collective mood is indeed correlated to the values of the DJIA, and successfully found an accuracy of 87.6 percent in predicting the daily behavior  of this index. \\
+Authors in \cite{8713246} have used news articles besides Twitter feeds as an additional alternative data source. The authors used Opinion Finder (OF) and Stanford Natural Language Processing Programming Interface (SNLP) to do the sentiment analysis of these sources. Furthermore, they adopted a  Time-based Term Frequency and Inverse Document Frequency (TF-IDF) to  normalize the frequency of terms and used it to cluster terms using clustering algorithms. In this work the authors also dr
+d correlation analysis and Granger causality as well as other linear regression models to study the correlation between the collective mood from these data sources and the stock market behavior of various entities in Australia. 
 
 % ========================================================
 \section{Business Understanding}
 % ========================================================
 \hl{Must finish - Understanding the stock market and terminologies, and unders}
 
-
-\begin{enumerate}
-    \item Stock Market Understanding
-
-
-     \item Clean and Green Energy Industry 
-\end{enumerate}
 % -------------------------------------------------------
 \subsection{Background}
 % -------------------------------------------------------
@@ -171,6 +141,7 @@ One would think that it is evident the urgent need to invest on green and climat
 Tickers - Public Companies
 Clean energy indices - S\&P clean energy index
 
+\hl{Must finish}
 % --------------------------------------------------------
 \subsection{Clean and Green Energy Industry }
 % --------------------------------------------------------
@@ -191,7 +162,6 @@ Average lost of 279, and 148 billion tons of ice per year on Greenland and the A
     \item Enphase 
     \item Merdian 
 \end{enumerate}
-
 
 
 
@@ -275,12 +245,12 @@ The time stamps values are in day, and the other fields are the corresponding va
 % --------------------------------------------------------
 \subsection{Exploratory Data Analysis} % data exploration report 
 % --------------------------------------------------------
-Explore data by plotting graphs: A critical part of data understanding is exploring the data through plotting charts. Following types of insights can be achieved through plots/graphs. a) Spotting outlier values b)
-Observing trends of variables (increasing/decreasing) etc.c) Observing correlation between variables
+This phase of the project is a critical part of data understanding, it is exploring the data through plotting charts of various kinds with various combinations. Following types of insights can be achieved through plots/graphs. a) Spotting outlier values b)
+Observing trends of variables (increasing/decreasing) etc.c) Observing correlation and use fullness of variables  in context and scope of the problem at hand
 
 
-\subsubsection{Stock prices}
-\textbf{Attributes Predicting Value Assessment }
+\subsubsection{Stock prices - EDA}
+\textbf{Attributes' Predicting Value Assessment }
 As discussed above, from the API we used to collect the stock price provided various attributes regarding each stock which included:
 \begin{enumerate}
     \item Closing price
@@ -288,8 +258,7 @@ As discussed above, from the API we used to collect the stock price provided var
     \item Daily Highest
     \item Daily Lowest
     \item Volume
-    \item Delta - derived attribute( |daily high - daily low| )
-    
+    \item Delta - derived attribute(|daily high - daily low| )
 \end{enumerate}
 Out of all these attributes rather than using every single we one separately and then concluding if it is useful or not we on the other hand decided to apply Auto-correlation based analysis for time series which allowed us to approximate the predicting power of each of the given series based on the randomness it comprises of and eliminated the non-useful ones. 
 \\Autocorrelation, also known as serial correlation, it is the correlation of a series with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them and based on the results of this type of computed correlation we are able to approximate the randomness that a particular series comprises and discard it if there it is an underlying characteristic of it made obvious using the results.
@@ -306,6 +275,7 @@ Out of all these attributes rather than using every single we one separately and
 
 
 \textbf{Closing Price Trend Plots}
+Since we have decided to move forward with the closing price attribute only, we then explored the individual trend lines for the companies under consideration. This plot has two parts where Figure(2) shows the trend of every stocks closing price for the maximum data available and then figure(3) shows the same but a deep dive and closer look at the trend for a single latest year only. The granularity of figure(1) is Yearly quarters where as for the second plot in figure(2) the granularity is of yearly weeks.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/allstocks.png}
@@ -323,7 +293,8 @@ Out of all these attributes rather than using every single we one separately and
 
 
 
-\subsubsection{Twitter Raw Data - Word Clouds}
+\subsubsection{Twitter Data - Word Clouds}
+In the figures(4) and (5) we can see the the word cloud plots for the raw but cleaned twitter data. By raw we mean to specify that it not characterized by sentiment yet rather only split and segregated over individual companies. It was interesting to see what concepts overpowered each of the companies and did actually provide a very good idea of the most important strings attached to each particular company. A good example of it was for siemens where we clearly saw visible focus on solar and wind energy whereas in the remaining one can easily conclude that there wasn't much of he talk around or relevant to wind energy. Another good use of this word-cloud analysis was that is gave us sound basis and reasoning to exclude Tesla's solar power company i.e "Solar City" because one could easily see it being overpowered by Elon Musk related and Tesla related stuff leaving the company itself to be quite insignificant. 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{images/complete_wordcloud2.png}
@@ -382,43 +353,86 @@ In this small analysis we applied methods for elbow analysis which sets the foun
 % ========================================================
 \section{Data Preparation}
 % ========================================================
-Verify data quality to remove errors: Once you have understood the data structure, you can next examine the quality of data and address various factors
+After having understood the data that we have collected and that which is available to us along with the sense of how we can make it useful for our particular problem we now move on to verify data quality and to remove errors from it so that we are then able to construct the intermediate forms and representations of it which are then finally integrated together to form inputs for the modeling step.
 \hl{Must finish}
 
 
 % --------------------------------------------------------
+\subsection{Data selection} % select data
+% --------------------------------------------------------
+\subsubsection{Twitter Data}
+For Twitter data, we retained the following fields:
+\begin{enumerate}
+    \item Created at
+    \item Tweet ID
+    \item Author ID
+    \item Tweet text
+\end{enumerate}
+
+\hl{check for correctness}
+
+\subsubsection{News Article Data}
+For news article data, we retained the following fields:
+
+\begin{enumerate}
+    \item Date published
+    \item Title
+    \item Description
+\end{enumerate}
+
+\subsubsection{Stock Price Data}
+For stock price data, we simply retained all data from the API as they are.
+
+\hl{check for correctness}
+
+% --------------------------------------------------------
 \subsection{Clean Data} 
 % --------------------------------------------------------
+\subsubsection{Twitter and News Article Data}
+To perform downstream tasks such as sentiment analysis, the text data from Twitter and news articles must be cleaned. For Twitter, the tweet text was cleaned, and for news articles, the title, combined into one field with the description, was cleaned. We cleaned the data with the following steps:
+
+\begin{enumerate}
+    \item Remove punctuation - Remove all punctuations from the sentences.
+    \item Tokenization - Transform the sentences into a list of words that can be found in the sentence.
+    \item Remove stop words - Remove all English stop words, which do not contribute to the sentiment.
+    \item Stemming - Turn all words into their root (stem) form.
+    \item Lemmatization - Turn all stem words into dictionary form.
+\end{enumerate}
 
 
 
 % --------------------------------------------------------
-\subsection{Data set} % data set description
+\subsection{Construct Data / Integrate Data } 
 % --------------------------------------------------------
-\subsubsection{News Articles}
+%integration's and generalization of scripts
+%give what sentiment analysis returned and how it was merged for further analysis
+%\\merge all three data sources
 
-\subsubsection{Tweets}
+\subsubsection{Twitter and News Article Data}
+Using the cleaned text data from above, for each entry in the Twitter and news article data we also created a field for sentiment. Using the NLTK SentimentIntensity Analyizer, we found the sentiment for each body of text. These were used to construct time series in modeling.
+\hl{double check}
 
-\subsubsection{Stock Prices}
+\subsubsection{Stock Price Data}
+Using the "High" and "Low" field in every record, we created a new field "Delta"
+
+$$ Delta = |High - Low|$$
+
+"Delta" returns the absolute value of the change in stock price for a specific stock for that specific day. It can be thought of as a reduction function for the daily high and daily low.
+
+\hl{double check}
 
 % --------------------------------------------------------
-\subsection{Explore Data 2 - explore sentiment data individually} % data exploration report 
+\subsection{Format Data } 
 % --------------------------------------------------------
-
-% --------------------------------------------------------
-\subsection{Construct Data - Integrate Data } 
-% --------------------------------------------------------
-integration's and generalization of scripts
-give what sentiment analysis returned and how it was merged for further analysis
-\\merge all three data sources
-
-
+Since the stock and Twitter data extend back many years, the granularity of the data was reformatted to be weekly instead of daily. Respective values such as sentiment, delta were averaged over all values for that week.
+\hl{double cehck, could maybe delete this section}
 
 % ========================================================
 \section{Modeling and Evaluation}
 % ========================================================
 An integrated model comprising of multiple modeling sub-components has been used to formulate, investigate and analyze the underlying relationship between the stock prices for top 5 green industry companies from our list against a few “wisdom of crowd” measures constructed using twitter data; the most significant and useful ones ending up to be the twitter sentiment and entity popularity using tweets. After individually completing the sub-components; the lag analysis and Granger Causality analysis is performed to get a sense of model behavior and its potential to facilitate in making data driven decisions for investment in this industry and particular companies. We make use of the lag analysis with some tweaking and variations, in this section we present in detail some aspects of the approach and techniques we have employed in order to achieve the identified goal.
 \hl{Must finish}
+
 
 % --------------------------------------------------------
 \subsection{Sentiment Analysis} 
@@ -441,8 +455,35 @@ A powerful built-in machine learning operation to obtain insights from linguisti
 \end{enumerate}
 We chose to construct time series for Positive, Negative and Compound sentiments to maximize the potential for finding some useful correlation with any of the three. Neutral Sentiment measure was redundant hence not used further.
 
-\subsubsection{CoreNLP}
-CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the Corenlp instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
+% --------------------------------------------------------
+\subsection{Explore Data Analysis 2 - Explore sentiment data individually} % data exploration report 
+% --------------------------------------------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{positive_sent_raw.png}
+  \caption{Positive Twitter Sentiment - Year Wise}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{neg_sent_raw.png}
+  \caption{Negative Twitter Sentiment - Year Wise}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{comp_sent.png}
+  \caption{Compound Twitter Sentiment - Year Wise}
+%   \label{fig:duck}
+\end{figure}
+
+
+
+
+\subsubsection{Stanford CoreNLP}
+CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the CoreNLP instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
 \begin{enumerate}
     \item Slow speed
     \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines
@@ -458,67 +499,234 @@ CoreNLP enables users to derive linguistic annotations for text, including token
 \subsection{Lag and Correlation Analysis} 
 % --------------------------------------------------------
 A distributed lag model is a model for time series data in which a regression equation is used to predict current values of a dependent variable based on both the current values of an explanatory variable and the lagged (past period) values of this explanatory variable.
+
+\textbf{"After extensive Lag analysis and simplifying the convoluted and counter intuitive results that we were getting we learnt and were able to conclude that green energy industry has just picked up the pace, this has been observed in the data and is transforming the use-fullness of our approach from long term uniformity that we witnessed of stock prices for these companies in the open market into a much shorter term predictive capability; very slightly now (given the recent awareness and shift, July 2020 on-wards) but very surely so. Given a few more years for this industry to mature, this same approach we have presented in the paper will be capable of short term predictive usefulness for driving short term insightful decisions as well. "}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2015_2021.png}
+  \caption{All Stock Prices - 2015 to 2021}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
+  \caption{Significant Pace of Volatility in all green energy comapanies in later half of 2020}
+%   \label{fig:duck}
+\end{figure}
+
 \subsubsection{Popularity Vs. Closing Price}
 \subsubsection{Sentiment Vs. Closing Price}
 In this section we present the various combinations we tested for the lag analysis of each company against the positive, negative and compound sentiments respectively and discuss what insights it provides us for figuring out the underlying dependency. For every company we plotted a lag analysis initially for a max lag of 100 against stock-prices and each sentiment(Positive, Negative and Compound) but realized very that the distribution of correlation is somewhat constant over this time and it only slightly varies towards the positive lag values. It was difficult to comprehend why this was but then plotting lag analysis with max-lag values of greater time periods like 500 days and 1000 days we saw a better distribution that made sense but allowed us to understand that the current relationship between stock prices and sentiments is pretty stable and slow-changing. The market gap is easily 100 days which sounds pretty off but when analyzed against the raw stock prices we had fort he companies and their insignificance and awareness in the market people and investors validated the fact that the very last months of 2020 i.e to be specific from July 2020 on-wards we see a significance movement in the majority companies' stock prices which reinforces and validates the consistent distribution of correlation in lag analysis. That consistent part basically highlights that people started taking about these green investment companies way earlier and have been but it never translated into action of investment that might be significant in contribution and growth of the stock itself, the true investment action although volatile in nature such that it is following cycles of rise and fall in the time period after July 2020 to latest days although does prove to now give us some useful material for varying correlation. The unformity of the stock prices in the majority time overpowered and not much useful and significant relation ship in the short term cut-offs rather long term correlation is pretty much meaningful and so what we concluded overall from all the analysis that will now be listed and below we concluded that the green-investing energy is not quite volatile at the moment and the decision making can be done for the longer term rather short term given the current talk in the town and awareness in the audience we have taken under consideration. 
 \\Simply put we have identified that there has been some shift in the attitude of the investors towards this green industry from July 2020 on-wards although volatile in this shorter time period but still now people are talking about it. Whereas for the majority preceding chunk of time there was uniformity in the green industry not making analysis like ours useful but this shift that we have been able to recognize in the attitude of people towards this industry and its reinforcements from the data validates that giving some more time to this industry i.e a few years or so it will be very useful to have an analysis replicated as ours which would then start indication short-term correlation and decision making. 
+\newline
+So finally setting it straight the current analysis leans towards helping us gain long-term insights on the stocks and if we give some time to this green industry we can reuse this same approach and we will most likely be able to present short-term insights gained with a reduced market gap. Right now our market gap is in unit of years basically rather than days but once the industry grows further given the trend we started observing from later half of 2020 it should easily reduce down to weeks and days etc. Any day we choose as optimal lag value for now between 0 - 100 or so will be giving us the same insights so the daily volatility becomes insignificant and hence we can get a longer term picture for now because what correlation we might get for a day 200 days away from the chosen one is where we start seeing decline rather than the very next day. Our lag analysis basically done on yearly or half year granularity would have given us something we expect as the change with smaller number of point until max lag. So imagine we have the lag analysis chart below and every line pair of consecutive lines/points are time wise at a distance of 6 months.
+\newline
 
-\\So finally setting it straight the current analysis leans towards helping us gain long-term insights on the stocks and if we give some time to this green industry we can reuse this same approach and we will most likely be able to present short-term insights gained with a reduced market gap. Right now our market gap is in unit of years basically rather than days but once the industry grows further given the trend we started observing from later half of 2020 it should easily reduce down to weeks and days etc. Any day we choose as optimal lag value for now between 0 - 100 or so will be giving us the same insights so the daily volatility becomes insignificant and hence we can get a longer term picture for now because what correlation we might get for a day 200 days away from the chosen one is where we start seeing decline rather than the very next day. Our lag analysis basically done on yearly or half year granularity would have given us something we expect as the change with smaller number of point until max lag. So imagine we have the lag analysis chart below and every line pair of consecutive lines/points are time wise at a distance of 6 months.
+\subsubsection{Discussion for Lag and Correlation analysis:}
+All except First Solar in figure (10) recently gained the pace and that was an interesting find which made sense to the uniformity of the lag analysis over shorter chunks of time. Where a lag of one or hundred would end up giving the same results as compared to obvious delta and declining correlation in increasing lags significantly to greater lag ranges.
+This figure has been repeated to explain that in here we can observe that some thing is going on the crowds very recently that is reflected in people now buying and selling more of the green energy company stocks as opposed to the non-popularity and uniformity they were facing in the previous years. This phenomenon is visible in figure (10) and (12) very clearly. The lag analysis' slight variations on one half of the plot in the 100 lag category reinforces this as well. The position of this half decreasing curve formed in the following lag analysis will vary depending on whether w are plotting the price against positive or negative sentiment. As ample for two of the companies is attached below with the rest available in appendix.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
+  \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
+%   \label{fig:duck}
+\end{figure}
 
-\hl{First Solar}
-\\
-\begin{SCfigure}
-\caption{FSL 100 :a) postive b)negative c) compund}
-\includegraphics[width=0.17\textwidth]{images/fslr_100_pos.png}
-\includegraphics[width=0.17\textwidth]{images/fslr_100_neg.png}
-\includegraphics[width=0.17\textwidth]{images/fslr_100_comp.png}
-\end{SCfigure}
-\\
-\begin{SCfigure}
-\caption{FSL 100 :a) postive b)negative c) compund}
-\includegraphics[width=0.17\textwidth]{images/fslr_1000_pos.png}
-\includegraphics[width=0.17\textwidth]{images/fslr_1000_neg.png}
-\includegraphics[width=0.17\textwidth]{images/fslr_1000_comp.png}
-\end{SCfigure}
-\\
-\hl{Siemens}
-\begin{figure}
-\begin{subfigure}{.2\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{images/fslr_1000_pos.png}
-  \caption{Positive}
-  \label{fig:sfig1}
-\end{subfigure}%
-\begin{subfigure}{.2\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{images/fslr_1000_neg.png}
-  \caption{Negative}
-  \label{fig:sfig2}
-\end{subfigure}
 
-\begin{subfigure}{.2\textwidth}
+\textbf{Lag Analysis For First Solar}
+\newline
+%--------------- FSLR Positive _-------------------
+\begin{figure}[H]
   \centering
-  \includegraphics[width=.8\linewidth]{images/fslr_1000_comp.png}
-  \caption{Compound}
-  \label{fig:sfig2}
-\end{subfigure}
-\caption{Lag Analysis for Siemens}
-\label{fig:fig}
+  \includegraphics[width=\linewidth]{images/fslr_100_pos.png}
+  \caption{First Solar - Positive Vs CLosing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_pos.png}
+  \caption{First Solar - Positive Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+
+%--------------- FSLR Positive  End -------------------
+
+
+%--------------- FSLR Negative -------------------
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_100_neg.png}
+  \caption{First Solar - Negative Vs CLosing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_neg.png}
+  \caption{First Solar - Negative Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+%--------------- FSLR Negative End  -------------------
+
+'%--------------- FSLR Compound -------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_100_comp.png}
+  \caption{First Solar - Compound Vs CLosing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_comp.png}
+  \caption{First Solar - Compound Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+%--------------- FSLR Compound  End -------------------
+
+
+
+
+
+\textbf{Lag Analysis For Sun Run}
+\newline
+%--------------- SunRun Positive _-------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
+  \caption{Sun Run - Positive Vs Closing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_pos.png}
+  \caption{Sun Run - Positive Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+
+%--------------- SunRun Positive  End -------------------
+
+
+%--------------- SunRun Negative Begin -------------------
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
+  \caption{Sun Run - Negative Vs CLosing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_neg.png}
+  \caption{Sun Run - Negative Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+%--------------- SunRun Negative End  -------------------
+
+'%--------------- SunRun Compound -------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_comp.png}
+  \caption{Sun Run - Compound Vs CLosing Price - Max Lag =100}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_comp.png}
+  \caption{Sun Run - Compound Vs Closing Price - Max Lag =1000}
+%   \label{fig:duck}
+\end{figure}
+%---------------SunRun Compound  End -------------------
+
+
+
+% --------------------------------------------------------
+\subsection{TF-IDF: Term frequency–inverse document frequency} 
+% --------------------------------------------------------
+We also performed $TF\_IDF$ to get key word extraction, the results are as below and this can be further used to develop more insightful analysis but for this project due to limited time we plan on making use of it creatively for extension of the project to new aspects.
+
+\newline 
+Top 20 key words for each company have been computed but it varies depending on the importance returned, they might be and usually were less than 20.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in ]{all_tfidf.png}
+  \caption{TF-IDF - All companies}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, , height =1.5in]{first_solartfidf.png}
+  \caption{TF-IDF - First Solar}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{plug_powertfidf.png}
+  \caption{TF-IDF - Plug Power}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{sunpowertfidf.png}
+  \caption{TF-IDF - Sun Power}
+%   \label{fig:duck}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth, height =1.5in]{sunruntfidf.png}
+  \caption{TF-IDF - Sun Run}
+%   \label{fig:duck}
 \end{figure}
 
 
 
-\hl{Plug Power}
-\hl{Sun Run}
-\hl{Sun Power}
-
-\subsubsection{Discussion for Lag and Correlation analysis:}
-
 % --------------------------------------------------------
 \subsection{Granger Causality} 
 % --------------------------------------------------------
-\subsubsection{Popularity Vs. Closing Price}
-\subsubsection{Sentiment Vs. Closing Price}
+\subsubsection{Granger Causality Results}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{granger_results/granger_first_solar.png}
+  \caption{Granger Results - First Solar}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{granger_results/granger_first_solar.png}
+  \caption{Granger Results - First Solar}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{granger_results/granger_sunrun.png}
+  \caption{Granger Results - Sunrun}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{granger_results/granger_plug.png}
+  \caption{Granger Results - Plug Power}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{granger_results/granger_sunpower.png}
+  \caption{Granger Results - Sunpower}
+%   \label{fig:duck}
+\end{figure}
+
+
 \subsubsection{Discussion for Granger Causality analysis:}
 
 
@@ -613,6 +821,13 @@ In this section we present the various combinations we tested for the lag analys
 \end{subfigure}
 \caption{Sentiment and Closing Prices Time Series Part 2}
 \end{figure}
+
+
+
+% ========================================================
+\section{Conclusion}
+% ========================================================
+After doing extensive work on implementing the methodology we had in mind for solving the identified problem statement of \textbf{"Using Twitter and news article data to predict stock market prices for green energy companies”} we have understood the underlying relationship to some extent after several iterations. The main highlights were that we see good results conforming to all the series of analysis we applied in the way to reach the final comparative time series plots. An interesting learning point was that due to pre2020-July period for the green energy industry there was not much going on and so very little margin to explore the highest potential of data driven decisions but the post July-2020 times did put a lot in perspective and so we also see that towards the ;after end of the Time series there is significant similarity between the closing stock prices and the popularity and sentiment measures. There was similarity and this similarity in trend had to be validated using to know whether the metrics that we are testing are the ones actually causing the change as well or not, this was done using Granger Causality and we were hence able to conclude from the results of Granger Causality analysis that our metrics are indeed the Granger Cause for the rise and fall which gives us immense power to manipulate this predictive insight and use it refined data driven decision that are better than intuition of investors and if not even better, they complement their intuition as well. Another learning point it highlight is that the causation pattern indeed is not exactly similarly driven for every company in regard to stock prices, for some its extremely aligned like Plug Power and Sun Power( Fig 31 a and b) whereas for others its matching the pace to some extent. Hence, we would say that this series of analysis proves to be quite useful and can be further refined and tuned to perform better. We can also tune it in ways that since we have been able to include multiple sentiments we might discover further groups within the green energy industry such that one groups corresponds well and is predictively driven by maybe the positive sentiment whereas the other group by the negative one. The potential to come up with new 
 
 
 
