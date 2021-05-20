@@ -3,8 +3,15 @@
 % https://www.acm.org/publications/proceedings-template
 % The ACM Latex guide provides further information about the ACM template
 
+
+
+
 \documentclass[sigconf, nonacm]{acmart}
 \usepackage{soul}
+
+
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
 
 %% The following content must be adapted for the final version
 % paper-specific
@@ -45,18 +52,15 @@
 \affiliation{%
   \institution{New York University}
 }
-\email{???@nyu.edu}
-
+\email{as10506@nyu.edu}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
-\begin{abstract}
+\begin{abstract} Data driven decision making is key to success. Living in this age of Big Data with numerous cutting edge technologies we have great opportunities at our disposal to make use of these resources to drive this data driven decision making approach into a reality and a culture for the current and upcoming industries. The rising global concern regarding climate change and the catastrophes it most probably might lead up to has given rise to several new companies being formed, organizations establishing new short-term/long-term policies and agreements;signed and presented to mange this issue with increased importance and priority. This mounting awareness is the cause for establishment of many new companies jumping into this industry along with the older ones improving, revamping and aligning their goals in agreement with climate change concerns as well. This gives us the perfectly timed opportunity to dive into putting forth an idea and methodology to explore the predictive power of the data for investment opportunities in this upcoming industry of Green Energy Companies based on understanding at greater depths driven with creativity to analyse, comprehend and formulate an approach applicable to see forthcoming stock-trend's for individual companies and as whole groups to facilitate investors before hand to maximize developments and profits an make the companies with a good cause to grow further. 
+\hl{done by me- change anything you feel doesnt fit}
 
-
-The project report should include an abstract, introduction and a literature review on related works and papers on your project. Then the following sections should follow the CRISP-DM: Data understanding (describe your data, data sources, relevance to your project), Business Understanding (problem statement, how your approach relates to solving a problem or experimenting a hypothesis...), Data Preparation (algorithms, data reduction, ....), Modeling, Evaluation and Deployment (if applicable..) 
-
-
+%In this project we explore the use of Twitter and News article as alternative data sources to predict the stock values of green companies such as First Solar, Siemens, etc. 
 \end{abstract}
 
 \maketitle
@@ -89,155 +93,528 @@ The project report should include an abstract, introduction and a literature rev
 % %%% VLDB block end %%%
 
 
+% ========================================================
+% ========================================================
+\section{Professor Instructions}
+% ========================================================
+% ========================================================
+\hl{
+The project report should include an abstract, introduction and a literature review on related works and papers on your project. Then the following sections should follow the CRISP-DM: Data understanding (describe your data, data sources, relevance to your project), Business Understanding (problem statement, how your approach relates to solving a problem or experimenting a hypothesis...), Data Preparation (algorithms, data reduction, ....), Modeling, Evaluation and Deployment (if applicable..) }
 
 % ========================================================
 % ========================================================
 \section{Introduction}
 % ========================================================
 % ========================================================
-\hl{Must finish}
+\hl{Must finish - END}
 
 % ========================================================
 % ========================================================
 \section{Literature Review}
 % ========================================================
 % ========================================================
-\hl{Must finish}
+\hl{Must finish - END}
+
+This is a cite from \cite{8713246}
 
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\linewidth]{figures/duck}
-%   \caption{An illustration of a Mallard Duck. Picture from Mabel Osgood Wright, \textit{Birdcraft}, published 1897.}
-%   \label{fig:duck}
-% \end{figure}
+% \begin{table*}[t]
+%   \caption{A double column table.}
+%   \label{tab:commands}
+%   \begin{tabular}{ccl}
+%     \toprule
+%     A Wide Command Column & A Random Number & Comments\\
+%     \midrule
+%     \verb|\tabular| & 100& The content of a table \\
+%     \verb|\table|  & 300 & For floating tables within a single column\\
+%     \verb|\table*| & 400 & For wider floating tables that span two columns\\
+%     \bottomrule
+%   \end{tabular}
+% \end{table*}
 
-\begin{table*}[t]
-  \caption{A double column table.}
-  \label{tab:commands}
-  \begin{tabular}{ccl}
-    \toprule
-    A Wide Command Column & A Random Number & Comments\\
-    \midrule
-    \verb|\tabular| & 100& The content of a table \\
-    \verb|\table|  & 300 & For floating tables within a single column\\
-    \verb|\table*| & 400 & For wider floating tables that span two columns\\
-    \bottomrule
-  \end{tabular}
-\end{table*}
-
-% ========================================================
-% ========================================================
-\section{Project Developement: Methodology-CRISP-DM}
-% ========================================================
-% ========================================================
-\hl{Must finish}
+% % ========================================================
+% % ========================================================
+% \section{Project Developement: Methodology-CRISP-DM}
+% % ========================================================
+% % ========================================================
+% \hl{Must finish}
 
 
 % ========================================================
-\subsection{Business Understanding}
+\section{Business Understanding}
 % ========================================================
-\hl{Must finish}
+\hl{Must finish - Understanding the stock market and terminologies, and unders}
+
+
+\begin{enumerate}
+    \item Stock Market Understanding
+
+
+     \item Clean and Green Energy Industry 
+\end{enumerate}
+% -------------------------------------------------------
+\subsection{Background}
+% -------------------------------------------------------
+\begin{flushleft}
+It is now evident, as it has been for a long time that we are facing a climate crisis and there is not question about the urgent need to take action on this crisis. The Intergovernmental Panel On Climate Change has stated that Scientific evidence for warming on the climate system is unequivocal and that there is a 95\% probability to be the result of human activity \cite{nasa_2021}.  Some of evidence that confirms this crisis is the increase of 2.12 degrees Fahrenheit  of the planet's average surface temperature, the warming of the ocean of more than 0.6 degrees Fahrenheit, the average lost of 279, and 148 billion tons of ice per year on Greenland and the Antarctica, respectively. Other evidence include the rise of global sea levels of about 8 inches during the last century, and many other  \cite{nasa_2021}.
+\end{flushleft}
+
+\begin{flushleft}
+One would think that it is evident the urgent need to invest on green and climate friendly companies and industries, but we live in a country and a world where the influence and interests of some corporations on our government and policy making drastically affect our ability to invest on sectors of the industry which could positively impact our chances to successfully fight against climate change. Now more than ever it is crucial for the global economy to transition to climate friendly industries, and it is paramount for the biggest economies such as the US to play a key role in this transition. 
+\end{flushleft}
+
+
+% --------------------------------------------------------
+\subsection{Stock Market Understanding}
+% --------------------------------------------------------
+    ETF Terms 
+Tickers - Public Companies
+Clean energy indices - S\&P clean energy index
+
+% --------------------------------------------------------
+\subsection{Clean and Green Energy Industry }
+% --------------------------------------------------------
+Top Green Energy company - survey
+Major events or global concern regarding clean energy
+Some major issues gaining attention:
+Warming of the ocean of more than 0.6 degrees Fahrenheit
+Increase of 2.12 degrees Fahrenheit of the planet’s average surface temperature.
+Average lost of 279, and 148 billion tons of ice per year on Greenland and the Antarctica, respectively
+
+\textbf{Market Leaders }
+\begin{enumerate}
+    \item First Solar
+    \item Siemens Gamesa
+    \item Sunrun
+    \item Plug Power
+    \item Sun power 
+    \item Enphase 
+    \item Merdian 
+\end{enumerate}
+
+
+
+
+
 
 % ========================================================
-\subsection{Data Understanding}
+\section{Data Understanding}
 % ========================================================
+\hl{highlight}
+
+Data Understanding phase of CRISP- DM Framework focus on collecting the data, describing and exploring the data.
+This stage comprises of four key steps to understand the available data, and identify new relevant data in order to solve the business problem. 
+
+
+
+
+% --------------------------------------------------------
+\subsection{Collection of Initial Data} % initial data collection report
+% --------------------------------------------------------
+For this project, we collected three sets of data.
+
+\subsubsection{Twitter Data}
+The Twitter Data was obtained from the official Twitter API. We were able to obtain an Academic License which allows us to collect up to 10 million tweets per month. For our purposes, we collected around 1 million tweets for the 7 companies identified in the business understanding phase from 2011 to 2020 using the full archive end point. With the streaming API, we also collected around 1500 tweets for each company daily.
+
+\subsubsection{News Article Data}
+The News article data was collected using Bing News Search API. We used the Basic License, which gave 1000 requests per month. Each request gave up to 100 news articles, which could include duplicates from previous queries. The API also only retains articles up to one month old. This was naturally very limited. We were able to collect around 200 unique news articles per company for one month.
+
+\subsubsection{Stock Prices Data}
+To collect the stock price data, we used the open-source Alpha Vantage API. It uses a ticker based search, allowing us to look up each company's stock directly. We collected data for each company with the longest duration allowed.
+% --------------------------------------------------------
+\subsection{Describe Data} % data description report 
+% --------------------------------------------------------
+\hl{Describe data — for explicit information: Once you have identified the data set, you need to describe its contents and explore insights to better understand the data and its business implications.}
+
+\subsubsection{Twitter Data}
+The query returned by the Twitter API is a JSON file. Each object in the file has the following fields:
+
+\begin{enumerate}
+    \item Created at
+    \item Tweet ID
+    \item Author ID
+    \item Tweet text
+    \item hashtags
+    \item \dots
+\end{enumerate}
+
+\hl{check for correctness}
+
+
+\subsubsection{News Article Data}
+The query returned by the Bing News Search API is a JSON file. It included a description of the search, and the list of articles returned by the query. Every article returned have the following fields:
+
+\begin{enumerate}
+    \item Item type
+    \item Date published
+    \item Title
+    \item Description
+    \item Provider
+    \item URL
+    \item \dots
+\end{enumerate}
+
+Not all data fields are always filled in, but the ones listed seem to be consistently available.
+
+\subsubsection{Stock Prices Data}
+The stock prices data for a certain company (ticker) given by AlphaVantage API is in the following format:
+
+\begin{enumerate}
+    \item Time Stamp
+    \item Close value
+    \item Open value
+    \item High
+    \item Low
+    \item Volume
+\end{enumerate}
+
+The time stamps values are in day, and the other fields are the corresponding values of the company for that day.
+
+\hl{please check for correctness, initial data before cleaning, no derived values.}
+
+% --------------------------------------------------------
+\subsection{Exploratory Data Analysis} % data exploration report 
+% --------------------------------------------------------
+Explore data by plotting graphs: A critical part of data understanding is exploring the data through plotting charts. Following types of insights can be achieved through plots/graphs. a) Spotting outlier values b)
+Observing trends of variables (increasing/decreasing) etc.c) Observing correlation between variables
+
+
+\subsubsection{Stock prices}
+\textbf{Attributes Predicting Value Assessment }
+As discussed above, from the API we used to collect the stock price provided various attributes regarding each stock which included:
+\begin{enumerate}
+    \item Closing price
+    \item Opening Price
+    \item Daily Highest
+    \item Daily Lowest
+    \item Volume
+    \item Delta - derived attribute( |daily high - daily low| )
+    
+\end{enumerate}
+Out of all these attributes rather than using every single we one separately and then concluding if it is useful or not we on the other hand decided to apply Auto-correlation based analysis for time series which allowed us to approximate the predicting power of each of the given series based on the randomness it comprises of and eliminated the non-useful ones. 
+\\Autocorrelation, also known as serial correlation, it is the correlation of a series with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them and based on the results of this type of computed correlation we are able to approximate the randomness that a particular series comprises and discard it if there it is an underlying characteristic of it made obvious using the results.
+\\ To interpret the result, we should know that if the auto-correlation plot lines lie very close to zero then it can be said that the given series corresponding to one any of the attribute under consideration is random and hence not useful for the time series analysis.
+
+\\ Performing this whole process on all of the given attributes we learnt that the delta attribute is pretty useless as seen in figure (x) and out of the rest, all exhibit the same patter =n hence using any one of it will suffice. We chose to use the "closing price" attribute series. 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{word_cloud_example.png}
-  \caption{Word cloud example}
+  \includegraphics[width=\linewidth]{images/autocorr.PNG}
+  \caption{Stock Price Attribute Assessment - Predicting Power/Usefulness for time series Analysis}
 %   \label{fig:duck}
 \end{figure}
 
+
+
+\textbf{Closing Price Trend Plots}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/allstocks.png}
+  \caption{Stock Prices- Maximum Time Period for every company available}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/stock_prices_all_2019t20.png}
+  \caption{Stock Prices- 2019 - 2020}
+%   \label{fig:duck}
+\end{figure}
+
+
+
+
+\subsubsection{Twitter Raw Data - Word Clouds}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\linewidth]{images/complete_wordcloud2.png}
+  \caption{Word cloud - All Companies Combined}
+%   \label{fig:duck}
+\end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}{0.25\linewidth}
+  \centering
+  \includegraphics[width=1\linewidth]{images/first_solar_wordcloud.png}
+  \caption{First Solar}
+  \label{fig:sfig2}
+\end{subfigure}%
+\begin{subfigure}{0.25\linewidth}
+  \centering
+  \includegraphics[width=1\linewidth]{images/plug_power_wordcloud.png}
+  \caption{Plug Power}
+  \label{fig:sfig3}
+\end{subfigure}
+\begin{subfigure}{0.25\linewidth}
+  \centering
+  \includegraphics[width=1\linewidth]{images/sunpower_wordcloud.png}
+  \caption{Sun Power}
+  \label{fig:sfig4}
+\end{subfigure}
+\begin{subfigure}{0.25\linewidth}
+  \centering
+  \includegraphics[width=1\linewidth]{images/siemens_gamesa_wordcloud.png}
+  \caption{Siemens}
+  \label{fig:sfig5}
+\end{subfigure}
+\begin{subfigure}{0.25\linewidth}
+  \centering
+  \includegraphics[width=1\linewidth]{images/sunrun_wordcloud.png}
+  \caption{Sunrun}
+  \label{fig:sfig6}
+\end{subfigure}
+\caption{Twitter Data - Word Clouds  }
+\label{fig:fig}
+\end{figure}
+
+
+
+\subsubsection{Author id - distribution}
+In this small analysis we applied methods for elbow analysis which sets the foundation and is usually used to identify the cut-off for the use of 80-20 rule. The 80-20 rule itself is characterized generally as 80$perc$ of contribution from 20$perc$ population or any data measures for that matter which in our case was for the idea that we were able to find the top 2600 tweet authors that were contributing in forming the 75$perc$ o twitter data that we collected. This analysis cane be useful later when we make modifications to approaches we test for data collected where we can employ these results and collect data only for those 2600 authors or since we know they are sort of the influencers or top contributers that are forming the opinion of the crowd we start following their views directly on other domains and aspects as well. This will turn out to be useful later but fir the scope of this project we have not made use of its discussed applications for now.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/author.png}
+  \caption{Tweet Author Importance - 80/20 rule cut-off identification}
+%   \label{fig:duck}
+\end{figure}
+
+
+
 % ========================================================
-\subsection{Data Preparation}
+\section{Data Preparation}
 % ========================================================
+Verify data quality to remove errors: Once you have understood the data structure, you can next examine the quality of data and address various factors
+\hl{Must finish}
+
+
+% --------------------------------------------------------
+\subsection{Clean Data} 
+% --------------------------------------------------------
+
+
+
+% --------------------------------------------------------
+\subsection{Data set} % data set description
+% --------------------------------------------------------
+\subsubsection{News Articles}
+
+\subsubsection{Tweets}
+
+\subsubsection{Stock Prices}
+
+% --------------------------------------------------------
+\subsection{Explore Data 2 - explore sentiment data individually} % data exploration report 
+% --------------------------------------------------------
+
+% --------------------------------------------------------
+\subsection{Construct Data - Integrate Data } 
+% --------------------------------------------------------
+integration's and generalization of scripts
+give what sentiment analysis returned and how it was merged for further analysis
+\\merge all three data sources
+
 
 
 % ========================================================
-\subsection{Modelling}
+\section{Modeling and Evaluation}
 % ========================================================
+An integrated model comprising of multiple modeling sub-components has been used to formulate, investigate and analyze the underlying relationship between the stock prices for top 5 green industry companies from our list against a few “wisdom of crowd” measures constructed using twitter data; the most significant and useful ones ending up to be the twitter sentiment and entity popularity using tweets. After individually completing the sub-components; the lag analysis and Granger Causality analysis is performed to get a sense of model behavior and its potential to facilitate in making data driven decisions for investment in this industry and particular companies. We make use of the lag analysis with some tweaking and variations, in this section we present in detail some aspects of the approach and techniques we have employed in order to achieve the identified goal.
+\hl{Must finish}
 
-
-% ========================================================
-\subsection{Evaluation}
-% ========================================================
-
-
-% ========================================================
-% \subsection{Deployment}
-% ========================================================
-
-
-\newpage
-% ========================================================
-% ========================================================
-\section{Latex Template Info - MUST ERASE}
-% ========================================================
-% ========================================================
-\begin{table}[hb]% h asks to places the floating element [h]ere.
-  \caption{Frequency of Special Characters}
-  \label{tab:freq}
-  \begin{tabular}{ccl}
-    \toprule
-    Non-English or Math & Frequency & Comments\\
-    \midrule
-    \O & 1 in 1000& For Swedish names\\
-    $\pi$ & 1 in 5 & Common in math\\
-    \$ & 4 in 5 & Used in business\\
-    $\Psi^2_1$ & 1 in 40\,000 & Unexplained usage\\
-  \bottomrule
-\end{tabular}
-\end{table}
-
-
-\subsection{Listings and Styles}
-
-
-\begin{itemize}
-\item Duis lacinia mollis purus, ac aliquet arcu dignissim ac. Vivamus accumsan sollicitudin dui, sed porta sem consequat.
-\item Curabitur ut mauris vel augue tempor suscipit eget eget lacus. Sed pulvinar lobortis dictum. Aliquam dapibus a velit.
-\item Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim.
-\end{itemize}
-
-Ut sagittis, massa nec rhoncus dignissim, urna ipsum vestibulum odio, ac dapibus massa lorem a dui. Nulla sit amet enim tortor. Ut non felis lectus. Aenean quis felis faucibus, efficitur magna vitae. 
-
+% --------------------------------------------------------
+\subsection{Sentiment Analysis} 
+% --------------------------------------------------------
+The branch of Data Mining corresponding to use of machine learning algorithms to categorize various input samples of relevant text into the dominant and underlying contextual sentiment or notion that characterizes the tone of the text. A sentence “The movie was not bad at all” contains words like bad but the context and underlying notion of it contextually is rather a positive comment regarding it the subject under discussion, hence sentiment analysis makes use of ML techniques, applied strategically and efficiently to classify the text into certain categories of sentiment/nature of the text. Most commonly positive or negative sentiment.
+For our project we aimed to experiment and maximize the best approximation by going through various options available in the open-source community but ended up testing two sentiment analyzer tool options available and known as the best ones yet. We chose to employ some of the well established and well known pre-trained sentiment analyzer model available as open-source tools. These included
 \begin{enumerate}
-\item Duis lacinia mollis purus, ac aliquet arcu dignissim ac. Vivamus accumsan sollicitudin dui, sed porta sem consequat.
-\item Curabitur ut mauris vel augue tempor suscipit eget eget lacus. Sed pulvinar lobortis dictum. Aliquam dapibus a velit.
-\item Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim.
+    \item Natural Language Tool Kit Sentiment Analyzer for python
+    \item Stanford CoreNLP sentiment analyzer
 \end{enumerate}
 
-Cras fermentum facilisis elit vitae egestas. Mauris porta, neque non rutrum efficitur, odio odio faucibus tortor, vitae imperdiet metus quam vitae eros. Proin porta dictum accumsan. Aliquam dapibus a velit. Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Ut maximus mi id arcu ultricies feugiat. Phasellus facilisis purus ac ipsum varius bibendum.
+\subsubsection{NLTK}
+A powerful built-in machine learning operation to obtain insights from linguistic data. It is an open-source library available for python, it is designed to work with human language data making sentiment analysis a necessary tool of it. It provides the complete set of tools required for contextual mining and hence very popular and known for its performance among the text mining community and industry. To be specific we used the \textbf{SentimentIntensityAnalyzer} model instance followed by the polarity score measures it computes.
+\\Returned Polarity measures per text sample:
+\begin{enumerate}
+    \item Positive Sentiment - between 0 and 1 with zero being lowest positivity score and 1 being highest
+    \item Negative Sentiment : between 0 and 1 with zero being lowest positivity score and 1 being highest
+    \item Compound Sentiment: Less then zero signifies negative sentiment and greater than zero signifies positive sentiment. 0 score value here corresponds to neutral sentiment
+    \item Neutral Sentiment
+\end{enumerate}
+We chose to construct time series for Positive, Negative and Compound sentiments to maximize the potential for finding some useful correlation with any of the three. Neutral Sentiment measure was redundant hence not used further.
 
-\subsection{Math and Equations}
+\subsubsection{CoreNLP}
+CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the Corenlp instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
+\begin{enumerate}
+    \item Slow speed
+    \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines
+\end{enumerate}
 
-Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum facilisis elit vitae egestas. Nam vulputate est non tellus efficitur pharetra. Vestibulum ligula est, varius in suscipit vel, porttitor id massa. Cras facilisis suscipit orci, ac tincidunt erat.
-\begin{equation}
-  \lim_{n\rightarrow \infty}x=0
-\end{equation}
+% --------------------------------------------------------
+\subsection{Popularity Time Series} 
+% --------------------------------------------------------
 
-Sed pulvinar lobortis dictum. Aliquam dapibus a velit porttitor ultrices. Ut maximus mi id arcu ultricies feugiat. Phasellus facilisis purus ac ipsum varius bibendum. Aenean a quam at massa efficitur tincidunt facilisis sit amet felis. 
-\begin{displaymath}
-  \sum_{i=0}^{\infty} x + 1
-\end{displaymath}
 
-Suspendisse molestie ultricies tincidunt. Praesent metus ex, tempus quis gravida nec, consequat id arcu. Donec maximus fermentum nulla quis maximus.
-\begin{equation}
-  \sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
-\end{equation}
 
-Curabitur vitae nulla dapibus, ornare dolor in, efficitur enim. Cras fermentum facilisis elit vitae egestas. Nam vulputate est non tellus efficitur pharetra. Vestibulum ligula est, varius in suscipit vel, porttitor id massa. Cras facilisis suscipit orci, ac tincidunt erat.
+% --------------------------------------------------------
+\subsection{Lag and Correlation Analysis} 
+% --------------------------------------------------------
+A distributed lag model is a model for time series data in which a regression equation is used to predict current values of a dependent variable based on both the current values of an explanatory variable and the lagged (past period) values of this explanatory variable.
+\subsubsection{Popularity Vs. Closing Price}
+\subsubsection{Sentiment Vs. Closing Price}
+In this section we present the various combinations we tested for the lag analysis of each company against the positive, negative and compound sentiments respectively and discuss what insights it provides us for figuring out the underlying dependency. For every company we plotted a lag analysis initially for a max lag of 100 against stock-prices and each sentiment(Positive, Negative and Compound) but realized very that the distribution of correlation is somewhat constant over this time and it only slightly varies towards the positive lag values. It was difficult to comprehend why this was but then plotting lag analysis with max-lag values of greater time periods like 500 days and 1000 days we saw a better distribution that made sense but allowed us to understand that the current relationship between stock prices and sentiments is pretty stable and slow-changing. The market gap is easily 100 days which sounds pretty off but when analyzed against the raw stock prices we had fort he companies and their insignificance and awareness in the market people and investors validated the fact that the very last months of 2020 i.e to be specific from July 2020 on-wards we see a significance movement in the majority companies' stock prices which reinforces and validates the consistent distribution of correlation in lag analysis. That consistent part basically highlights that people started taking about these green investment companies way earlier and have been but it never translated into action of investment that might be significant in contribution and growth of the stock itself, the true investment action although volatile in nature such that it is following cycles of rise and fall in the time period after July 2020 to latest days although does prove to now give us some useful material for varying correlation. The unformity of the stock prices in the majority time overpowered and not much useful and significant relation ship in the short term cut-offs rather long term correlation is pretty much meaningful and so what we concluded overall from all the analysis that will now be listed and below we concluded that the green-investing energy is not quite volatile at the moment and the decision making can be done for the longer term rather short term given the current talk in the town and awareness in the audience we have taken under consideration. 
+\\Simply put we have identified that there has been some shift in the attitude of the investors towards this green industry from July 2020 on-wards although volatile in this shorter time period but still now people are talking about it. Whereas for the majority preceding chunk of time there was uniformity in the green industry not making analysis like ours useful but this shift that we have been able to recognize in the attitude of people towards this industry and its reinforcements from the data validates that giving some more time to this industry i.e a few years or so it will be very useful to have an analysis replicated as ours which would then start indication short-term correlation and decision making. 
 
-\section{Citations}
+\\So finally setting it straight the current analysis leans towards helping us gain long-term insights on the stocks and if we give some time to this green industry we can reuse this same approach and we will most likely be able to present short-term insights gained with a reduced market gap. Right now our market gap is in unit of years basically rather than days but once the industry grows further given the trend we started observing from later half of 2020 it should easily reduce down to weeks and days etc. Any day we choose as optimal lag value for now between 0 - 100 or so will be giving us the same insights so the daily volatility becomes insignificant and hence we can get a longer term picture for now because what correlation we might get for a day 200 days away from the chosen one is where we start seeing decline rather than the very next day. Our lag analysis basically done on yearly or half year granularity would have given us something we expect as the change with smaller number of point until max lag. So imagine we have the lag analysis chart below and every line pair of consecutive lines/points are time wise at a distance of 6 months.
 
-Some examples of references. A paginated journal article~\cite{Abril07}, an enumerated journal article~\cite{Cohen07}, a reference to an entire issue~\cite{JCohen96}, a monograph (whole book) ~\cite{Kosiur01}, a monograph/whole book in a series (see 2a in spec. document)~\cite{Harel79}, a divisible-book such as an anthology or compilation~\cite{Editor00} followed by the same example, however we only output the series if the volume number is given~\cite{Editor00a} (so Editor00a's series should NOT be present since it has no vol. no.), a chapter in a divisible book~\cite{Spector90}, a chapter in a divisible book in a series~\cite{Douglass98}, a multi-volume work as book~\cite{Knuth97}, an article in a proceedings (of a conference, symposium, workshop for example) (paginated proceedings article)~\cite{Andler79}, a proceedings article with all possible elements~\cite{Smith10}, an example of an enumerated proceedings article~\cite{VanGundy07}, an informally published work~\cite{Harel78}, a doctoral dissertation~\cite{Clarkson85}, a master's thesis~\cite{anisi03}, an finally two online documents or world wide web resources~\cite{Thornburg01, Ablamowicz07}.
+\hl{First Solar}
+\\
+\begin{SCfigure}
+\caption{FSL 100 :a) postive b)negative c) compund}
+\includegraphics[width=0.17\textwidth]{images/fslr_100_pos.png}
+\includegraphics[width=0.17\textwidth]{images/fslr_100_neg.png}
+\includegraphics[width=0.17\textwidth]{images/fslr_100_comp.png}
+\end{SCfigure}
+\\
+\begin{SCfigure}
+\caption{FSL 100 :a) postive b)negative c) compund}
+\includegraphics[width=0.17\textwidth]{images/fslr_1000_pos.png}
+\includegraphics[width=0.17\textwidth]{images/fslr_1000_neg.png}
+\includegraphics[width=0.17\textwidth]{images/fslr_1000_comp.png}
+\end{SCfigure}
+\\
+\hl{Siemens}
+\begin{figure}
+\begin{subfigure}{.2\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{images/fslr_1000_pos.png}
+  \caption{Positive}
+  \label{fig:sfig1}
+\end{subfigure}%
+\begin{subfigure}{.2\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{images/fslr_1000_neg.png}
+  \caption{Negative}
+  \label{fig:sfig2}
+\end{subfigure}
 
-\begin{acks}
- This work was supported by the [...] Research Fund of [...] (Number [...]). Additional funding was provided by [...] and [...]. We also thank [...] for contributing [...].
-\end{acks}
+\begin{subfigure}{.2\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{images/fslr_1000_comp.png}
+  \caption{Compound}
+  \label{fig:sfig2}
+\end{subfigure}
+\caption{Lag Analysis for Siemens}
+\label{fig:fig}
+\end{figure}
 
-%\clearpage
+
+
+\hl{Plug Power}
+\hl{Sun Run}
+\hl{Sun Power}
+
+\subsubsection{Discussion for Lag and Correlation analysis:}
+
+% --------------------------------------------------------
+\subsection{Granger Causality} 
+% --------------------------------------------------------
+\subsubsection{Popularity Vs. Closing Price}
+\subsubsection{Sentiment Vs. Closing Price}
+\subsubsection{Discussion for Granger Causality analysis:}
+
+
+
+
+% ========================================================
+\section{Evaluation}
+% ========================================================
+% --------------------------------------------------------
+\subsection{Time Series Plots Vs Stock Prices} 
+% --------------------------------------------------------
+
+% .......................................
+\subsubsection{Popularity  Vs Stock Prices Series} 
+% .......................................
+\begin{figure}[H]
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{popularity_time_series/First Solar Closing Stock Prices_closing_price_daily_tweets.png} 
+   \caption{First Solar Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{popularity_time_series/Siemens Gamesa Closing Stock Prices_closing_price_daily_tweets.png} 
+   \caption{Siemens Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{popularity_time_series/Sunrun Closing Stock Prices_closing_price_daily_tweets.png} 
+   \caption{Sunrun Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\caption{Popularity and Closing Prices Time Series Part 1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{popularity_time_series/Plug Power Closing Stock Prices_closing_price_daily_tweets.png} 
+   \caption{Plug Power Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{popularity_time_series/Sunpower Closing Stock Prices_closing_price_daily_tweets.png} 
+   \caption{Sunpower Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\caption{Popularity and Closing Prices Time Series Part 2}
+\end{figure}
+
+
+% .......................................
+\subsubsection{Sentiment Analysis  Vs Stock Prices Series} 
+% .......................................
+\begin{figure}[H]
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{sentiment_time_series/First Solar Closing Stock Prices_closing_price_compound_sentiment.png} 
+   \caption{First Solar Closing and Sentiment Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{sentiment_time_series/Siemens Gamesa Closing Stock Prices_closing_price_compound_sentiment.png} 
+   \caption{Siemens Closing and Sentiment Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{sentiment_time_series/Sunrun Closing Stock Prices_closing_price_compound_sentiment.png} 
+   \caption{Sunrun Closing and Sentiment Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\caption{Sentiment and Closing Prices Time Series Part 1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{sentiment_time_series/Plug Power Closing Stock Prices_closing_price_compound_sentiment.png} 
+   \caption{Plug Power Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\centering
+   \begin{subfigure}[b]{0.5\textwidth}
+   \includegraphics[width=\textwidth]{sentiment_time_series/Sunpower Closing Stock Prices_closing_price_compound_sentiment.png} 
+   \caption{Sunpower Closing and Popularity Series}
+   \label{fig:Ng1} 
+\end{subfigure}
+\caption{Sentiment and Closing Prices Time Series Part 2}
+\end{figure}
+
+
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample}
