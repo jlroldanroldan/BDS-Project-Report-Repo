@@ -459,37 +459,33 @@ Since the stock and Twitter data extend back many years, the granularity of the 
 % ========================================================
 \section{Modeling and Evaluation}
 % ========================================================
-An integrated model comprising of multiple modeling sub-components has been used to formulate, investigate and analyze the underlying relationship between the stock prices for top 5 green industry companies from our list against a few “wisdom of crowd” measures constructed using twitter data; the most significant and useful ones ending up to be the twitter sentiment and entity popularity using tweets. After individually completing the sub-components; the lag analysis and Granger Causality analysis is performed to get a sense of model behavior and its potential to facilitate in making data driven decisions for investment in this industry and particular companies. We make use of the lag analysis with some tweaking and variations, in this section we present in detail some aspects of the approach and techniques we have employed in order to achieve the identified goal.
-\hl{Must finish}
-
-
+An integrated model comprising of multiple modeling sub - components has been used to formulate, investigate and analyze the underlying relationship between the stock prices for the top five green industry companies from our list against a few “wisdom of crowd” measures constructed using twitter data; the most significant and useful ones ending up to be the twitter sentiment and entity popularity using tweets. After individually completing the sub-components; the lag analysis and Granger Causality analysis is performed to get a sense of model behavior and its potential to facilitate in making data driven decisions for investment in this industry and particular companies. We make use of the lag analysis with some tweaking and variations, in this section we present in detail some aspects of the approach and techniques we have employed in order to achieve the identified goal.
 
 % --------------------------------------------------------
 \subsection{Explore Data Analysis 2 - Explore sentiment data individually} % data exploration report 
 % --------------------------------------------------------
+To get an idea of the big picture from the sentiment analysis results, we plotted a summary of the positive, negative, and compound Twitter sentiment from 2011 to 2021 in figures \ref{positive_sent_raw} to \ref{comp_sent}, respectively. These plots are specially useful to distinguish an evident anomaly as shown. 
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{positive_sent_raw.png}
   \caption{Positive Twitter Sentiment - Year Wise}
-%   \label{fig:duck}
+  \label{positive_sent_raw}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{neg_sent_raw.png}
   \caption{Negative Twitter Sentiment - Year Wise}
-%   \label{fig:duck}
+  \label{neg_sent_raw}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{comp_sent.png}
   \caption{Compound Twitter Sentiment - Year Wise}
-%   \label{fig:duck}
+  \label{comp_sent}
 \end{figure}
-
-
-
 
 
 
@@ -499,164 +495,6 @@ An integrated model comprising of multiple modeling sub-components has been used
 
 
 
-% --------------------------------------------------------
-\subsection{Lag and Correlation Analysis} 
-% --------------------------------------------------------
-A distributed lag model is a model for time series data in which a regression equation is used to predict current values of a dependent variable based on both the current values of an explanatory variable and the lagged (past period) values of this explanatory variable.
-
-\textbf{"After extensive Lag analysis and simplifying the convoluted and counter intuitive results that we were getting we learnt and were able to conclude that green energy industry has just picked up the pace, this has been observed in the data and is transforming the use-fullness of our approach from long term uniformity that we witnessed of stock prices for these companies in the open market into a much shorter term predictive capability; very slightly now (given the recent awareness and shift, July 2020 on-wards) but very surely so. Given a few more years for this industry to mature, this same approach we have presented in the paper will be capable of short term predictive usefulness for driving short term insightful decisions as well. "}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2015_2021.png}
-  \caption{All Stock Prices - 2015 to 2021}
-%   \label{fig:duck}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
-  \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
-%   \label{fig:duck}
-\end{figure}
-
-\subsubsection{Popularity Vs. Closing Price}
-\subsubsection{Sentiment Vs. Closing Price}
-In this section we present the various combinations we tested for the lag analysis of each company against the positive, negative and compound sentiments respectively and discuss what insights it provides us for figuring out the underlying dependency. For every company we plotted a lag analysis initially for a max lag of 100 against stock-prices and each sentiment(Positive, Negative and Compound) but realized very that the distribution of correlation is somewhat constant over this time and it only slightly varies towards the positive lag values. It was difficult to comprehend why this was but then plotting lag analysis with max-lag values of greater time periods like 500 days and 1000 days we saw a better distribution that made sense but allowed us to understand that the current relationship between stock prices and sentiments is pretty stable and slow-changing. The market gap is easily 100 days which sounds pretty off but when analyzed against the raw stock prices we had fort he companies and their insignificance and awareness in the market people and investors validated the fact that the very last months of 2020 i.e to be specific from July 2020 on-wards we see a significance movement in the majority companies' stock prices which reinforces and validates the consistent distribution of correlation in lag analysis. That consistent part basically highlights that people started taking about these green investment companies way earlier and have been but it never translated into action of investment that might be significant in contribution and growth of the stock itself, the true investment action although volatile in nature such that it is following cycles of rise and fall in the time period after July 2020 to latest days although does prove to now give us some useful material for varying correlation. The unformity of the stock prices in the majority time overpowered and not much useful and significant relation ship in the short term cut-offs rather long term correlation is pretty much meaningful and so what we concluded overall from all the analysis that will now be listed and below we concluded that the green-investing energy is not quite volatile at the moment and the decision making can be done for the longer term rather short term given the current talk in the town and awareness in the audience we have taken under consideration. 
-\\Simply put we have identified that there has been some shift in the attitude of the investors towards this green industry from July 2020 on-wards although volatile in this shorter time period but still now people are talking about it. Whereas for the majority preceding chunk of time there was uniformity in the green industry not making analysis like ours useful but this shift that we have been able to recognize in the attitude of people towards this industry and its reinforcements from the data validates that giving some more time to this industry i.e a few years or so it will be very useful to have an analysis replicated as ours which would then start indication short-term correlation and decision making. 
-\newline
-So finally setting it straight the current analysis leans towards helping us gain long-term insights on the stocks and if we give some time to this green industry we can reuse this same approach and we will most likely be able to present short-term insights gained with a reduced market gap. Right now our market gap is in unit of years basically rather than days but once the industry grows further given the trend we started observing from later half of 2020 it should easily reduce down to weeks and days etc. Any day we choose as optimal lag value for now between 0 - 100 or so will be giving us the same insights so the daily volatility becomes insignificant and hence we can get a longer term picture for now because what correlation we might get for a day 200 days away from the chosen one is where we start seeing decline rather than the very next day. Our lag analysis basically done on yearly or half year granularity would have given us something we expect as the change with smaller number of point until max lag. So imagine we have the lag analysis chart below and every line pair of consecutive lines/points are time wise at a distance of 6 months.
-\newline
-
-\subsubsection{Discussion for Lag and Correlation analysis:}
-All except First Solar in figure (10) recently gained the pace and that was an interesting find which made sense to the uniformity of the lag analysis over shorter chunks of time. Where a lag of one or hundred would end up giving the same results as compared to obvious delta and declining correlation in increasing lags significantly to greater lag ranges.
-This figure has been repeated to explain that in here we can observe that some thing is going on the crowds very recently that is reflected in people now buying and selling more of the green energy company stocks as opposed to the non-popularity and uniformity they were facing in the previous years. This phenomenon is visible in figure (10) and (12) very clearly. The lag analysis' slight variations on one half of the plot in the 100 lag category reinforces this as well. The position of this half decreasing curve formed in the following lag analysis will vary depending on whether w are plotting the price against positive or negative sentiment. As ample for two of the companies is attached below with the rest available in appendix.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
-  \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
-%   \label{fig:duck}
-\end{figure}
-
-
-\textbf{Lag Analysis For First Solar}
-\newline
-%--------------- FSLR Positive _-------------------
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_100_pos.png}
-  \caption{First Solar - Positive Vs Closing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_1000_pos.png}
-  \caption{First Solar - Positive Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-
-%--------------- FSLR Positive  End -------------------
-
-
-%--------------- FSLR Negative -------------------
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_100_neg.png}
-  \caption{First Solar - Negative Vs CLosing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_1000_neg.png}
-  \caption{First Solar - Negative Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-%--------------- FSLR Negative End  -------------------
-
-'%--------------- FSLR Compound -------------------
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_100_comp.png}
-  \caption{First Solar - Compound Vs CLosing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/fslr_1000_comp.png}
-  \caption{First Solar - Compound Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-%--------------- FSLR Compound  End -------------------
-
-
-
-
-
-\textbf{Lag Analysis For Sun Run}
-\newline
-%--------------- SunRun Positive _-------------------
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
-  \caption{Sun Run - Positive Vs Closing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_1000_pos.png}
-  \caption{Sun Run - Positive Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-
-%--------------- SunRun Positive  End -------------------
-
-
-%--------------- SunRun Negative Begin -------------------
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
-  \caption{Sun Run - Negative Vs CLosing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_1000_neg.png}
-  \caption{Sun Run - Negative Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-%--------------- SunRun Negative End  -------------------
-
-'%--------------- SunRun Compound -------------------
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_100_comp.png}
-  \caption{Sun Run - Compound Vs CLosing Price - Max Lag =100}
-%   \label{fig:duck}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{images/srun_1000_comp.png}
-  \caption{Sun Run - Compound Vs Closing Price - Max Lag =1000}
-%   \label{fig:duck}
-\end{figure}
-%---------------SunRun Compound  End -------------------
-
-
-
-% --------------------------------------------------------
-\subsection{Time Series Plots Vs Stock Prices} 
-% --------------------------------------------------------
-% .......................................
-\subsubsection{Popularity  Vs Stock Prices Series} 
-% .......................................
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/First Solar Closing Stock Prices_closing_price_daily_tweets.png}
@@ -737,6 +575,168 @@ This figure has been repeated to explain that in here we can observe that some t
 \end{subfigure}
 \caption{Sentiment and Closing Prices Time Series Part 2}
 \end{figure}
+
+
+
+
+% --------------------------------------------------------
+\subsection{Lag and Correlation Analysis} 
+% --------------------------------------------------------
+A distributed lag model is a model for time series data in which a regression equation is used to predict current values of a dependent variable based on both the current values of an explanatory variable and the lagged (past period) values of this explanatory variable.
+
+\textbf{"After extensive lag analysis and simplifying the convoluted and counter intuitive results that we were getting, we were able to conclude that the green energy industry as a whole has just picked up the pace. This has been observed in the data, as illustrated in figures \ref{all_stock_prices_2015_2021} to \ref{all_stock_prices_2020_2021},  and is transforming the usefulness of our approach from long term uniformity that we witnessed of stock prices for these companies in the open market into a much shorter term predictive capability; very slightly now (given the recent awareness and shift, July 2020 on-wards) but very surely so. Given a few more years for this industry to mature, this same approach we have presented in the paper will be capable of short term predictive usefulness for driving short term insightful decisions as well. "}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2015_2021.png}
+  \caption{All Stock Prices - 2015 to 2021}
+  \label{all_stock_prices_2015_2021}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
+  \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
+  \label{all_stock_prices_2020_2021}
+\end{figure}
+
+\subsubsection{Popularity Vs. Closing Price}
+\subsubsection{Sentiment Vs. Closing Price}
+In this section, we present the various combinations we tested for the lag analysis of each company against the positive, negative and compound sentiments (figures \ref{fslr_100_pos} to \ref{srun_1000_comp}) respectively and discuss what insights it provides us for figuring out the underlying correlation. For every company,  we plotted a lag analysis initially for a max lag of 100 against stock-prices and each sentiment(Positive, Negative and Compound) but realized that the distribution of correlation is somewhat constant over this time and it only slightly varies towards the positive lag values. \newline
+
+It was difficult to comprehend why this was but then plotting lag analysis with max-lag values of greater time periods like 500 days and 1000 days we saw a better distribution that made sense. This allowed us to understand that the current relationship between stock prices and sentiments is stable and slow-changing. The market gap is easily 100 days which sounds pretty off but when analyzed against the raw stock prices we had for the companies and their insignificance and awareness in the market people and investors validated the fact that the very last months of 2020 i.e to be specific from July 2020 on-wards we see a significance movement in the majority companies' stock prices which reinforces and validates the consistent distribution of correlation in lag analysis. \newline
+
+That consistent part highlights the idea that people started talking about these green companies earlier and have been for a while but it never translated into action of investment that might be significant in contribution and growth of the stock itself, the true investment action although volatile in nature such that it is following cycles of rise and fall in the time period after July 2020 to latest days although does prove to now give us some useful material for varying correlation. \newline
+
+The uniformity of the stock prices in the majority of the time overpowered and not much useful and significant relationship in the short term cut-offs rather long term correlation is pretty much meaningful and so what we concluded overall from all the analysis that will now be listed and below we concluded that the green-investing energy is not quite volatile at the moment and the decision making can be done for the longer term rather short term given the current talk in the town and awareness in the audience we have taken under consideration. \newline 
+
+Simply put we have identified that there has been some shift in the attitude of the investors towards this green industry from July 2020 on-wards although volatile in this shorter time period but still now people are talking about it. Whereas for the majority preceding chunk of time there was uniformity in the green industry not making analysis like ours useful but this shift that we have been able to recognize in the attitude of people towards this industry and its reinforcements from the data validates that giving some more time to this industry i.e a few years or so it will be very useful to have an analysis replicated as ours which would then start indication short-term correlation and decision making. \newline
+
+So finally setting it straight the current analysis leans towards helping us gain long-term insights on the stocks and if we give some time to this green industry we can reuse this same approach and we will most likely be able to present short-term insights gained with a reduced market gap. Right now our market gap is in unit of years basically rather than days but once the industry grows further given the trend we started observing from later half of 2020 it should easily reduce down to weeks and days etc. Any day we choose as optimal lag value for now between 0 - 100 or so will be giving us the same insights so the daily volatility becomes insignificant and hence we can get a longer term picture for now because what correlation we might get for a day 200 days away from the chosen one is where we start seeing decline rather than the very next day. Our lag analysis basically done on yearly or half year granularity would have given us something we expect as the change with smaller number of point until max lag. So imagine we have the lag analysis chart below and every line pair of consecutive lines/points are time wise at a distance of 6 months.
+\newline
+
+\subsubsection{Discussion for Lag and Correlation analysis } 
+All except First Solar in figure \ref{all_stock_prices_2015_2021} recently gained the pace and that was an interesting find which made sense to the uniformity of the lag analysis over shorter chunks of time. Where a lag of one or hundred would end up giving the same results as compared to obvious delta and declining correlation in increasing lags significantly to greater lag ranges.
+Figure \ref{all_stock_prices_2015_2021} illustrates that something is going on the crowds very recently that is reflected in people now buying and selling more of the green energy company stocks as opposed to the non-popularity and uniformity they were facing in the previous years. This phenomenon is visible in figure \ref{all_stock_prices_2015_2021} and \ref{all_stock_prices_2020_2021} very clearly. The lag analysis' slight variations on one half of the plot in the 100 lag category reinforces this as well. The position of this half decreasing curve formed in the following lag analysis will vary depending on whether we are plotting the price against positive or negative sentiment. As ample for two of the companies is attached below with the rest available in appendix. \newline
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\linewidth]{all_stock_prices_and_mean/all_stock_prices_2020_2021.png}
+%   \caption{Significant Pace of Volatility in all green energy companies in later half of 2020}
+% %   \label{fig:duck}
+% \end{figure}
+
+\newline
+\textbf{Lag Analysis For First Solar}
+%--------------- FSLR Positive _-------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_100_pos.png}
+  \caption{First Solar - Positive Vs Closing Price - Max Lag =100}
+  \label{fslr_100_pos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_pos.png}
+  \caption{First Solar - Positive Vs Closing Price - Max Lag =1000}
+  \label{fslr_1000_pos}
+\end{figure}
+
+%--------------- FSLR Positive  End -------------------
+
+
+%--------------- FSLR Negative -------------------
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_100_neg.png}
+  \caption{First Solar - Negative Vs CLosing Price - Max Lag =100}
+  \label{fslr_100_neg}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_neg.png}
+  \caption{First Solar - Negative Vs Closing Price - Max Lag =1000}
+  \label{fslr_1000_neg}
+\end{figure}
+%--------------- FSLR Negative End  -------------------
+
+'%--------------- FSLR Compound -------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_100_comp.png}
+  \caption{First Solar - Compound Vs CLosing Price - Max Lag =100}
+  \label{fslr_100_comp}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/fslr_1000_comp.png}
+  \caption{First Solar - Compound Vs Closing Price - Max Lag =1000}
+  \label{fslr_1000_comp}
+\end{figure}
+%--------------- FSLR Compound  End -------------------
+
+
+
+
+
+\textbf{Lag Analysis For Sun Run}
+\newline
+%--------------- SunRun Positive _-------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
+  \caption{Sun Run - Positive Vs Closing Price - Max Lag =100}
+  \label{srun_100_pos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_pos.png}
+  \caption{Sun Run - Positive Vs Closing Price - Max Lag =1000}
+  \label{srun_1000_pos}
+\end{figure}
+
+%--------------- SunRun Positive  End -------------------
+
+
+%--------------- SunRun Negative Begin -------------------
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_pos.png}
+  \caption{Sun Run - Negative Vs CLosing Price - Max Lag =100}
+  \label{srun_100_pos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_neg.png}
+  \caption{Sun Run - Negative Vs Closing Price - Max Lag =1000}
+  \label{srun_1000_neg}
+\end{figure}
+%--------------- SunRun Negative End  -------------------
+
+'%--------------- SunRun Compound -------------------
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_100_comp.png}
+  \caption{Sun Run - Compound Vs CLosing Price - Max Lag =100}
+  \label{srun_100_comp}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/srun_1000_comp.png}
+  \caption{Sun Run - Compound Vs Closing Price - Max Lag =1000}
+  \label{srun_1000_comp}
+\end{figure}
+%---------------SunRun Compound  End -------------------
+
 
 
 
