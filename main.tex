@@ -353,7 +353,7 @@ To perform downstream tasks such as sentiment analysis, the text data from Twitt
     \item Lemmatization - Turn all stem words into dictionary form.
 \end{enumerate}
 
-
+We used Python to perform all these steps using NLTK as the primary library. We relied on the tutorial \cite{sah_2018} to understand how to use this library and implement the required analysis.
 
 % --------------------------------------------------------
 \subsection{Construct Data / Integrate Data } 
@@ -540,7 +540,6 @@ A distributed lag model is a model for time series data in which a regression eq
 \end{figure}
 
 \subsubsection{Popularity Vs. Closing Price}
-\subsubsection{Sentiment Vs. Closing Price}
 In this section, we present the various combinations we tested for the lag analysis of each company against the positive, negative and compound sentiments (figures \ref{fslr_100_pos} to \ref{srun_1000_comp}) respectively and discuss what insights it provides us for figuring out the underlying correlation. For every company,  we plotted a lag analysis initially for a max lag of 100 against stock-prices and each sentiment(Positive, Negative and Compound) but realized that the distribution of correlation is somewhat constant over this time and it only slightly varies towards the positive lag values. \newline
 
 It was difficult to comprehend why this was but then plotting lag analysis with max-lag values of greater time periods like 500 days and 1000 days we saw a better distribution that made sense. This allowed us to understand that the current relationship between stock prices and sentiments is stable and slow-changing. The market gap is easily 100 days which sounds pretty off but when analyzed against the raw stock prices we had for the companies and their insignificance and awareness in the market people and investors validated the fact that the very last months of 2020 i.e to be specific from July 2020 on-wards we see a significance movement in the majority companies' stock prices which reinforces and validates the consistent distribution of correlation in lag analysis. \newline
@@ -722,9 +721,6 @@ For each company, different series Granger causes the closing prices at differen
   \label{granger_sunpower}
 \end{figure}
 
-
-\subsubsection{Discussion for Granger Causality analysis:}
-
 % --------------------------------------------------------
 \subsection{TF-IDF: Term frequency–inverse document frequency} 
 % --------------------------------------------------------
@@ -771,7 +767,7 @@ Top 20 key words for each company have been computed but it varies depending on 
 % ========================================================
 After doing extensive work on implementing the methodology we had in mind for solving the identified problem statement of \textbf{"Using Twitter and news article data to predict stock market prices for green energy companies”} we have understood the underlying relationship to some extent after several iterations. \newline
 
-An interesting learning point was that due to pre 2020-July period for the green energy industry there was not much going on and so very little margin to explore the highest potential of data driven decisions but the post July-2020 times did put a lot in perspective and so we also see that towards the end of the time series there is significant similarity between the closing stock prices and the popularity and sentiment measures. \newline 
+An interesting learning point was that due to pre 2020-July period for the green energy industry there was not much going on and so very little margin to explore the highest potential of data driven decisions but the post July-2020 times did put a lot in perspective and so we also see that towards the end of the time series there is significant similarity between the closing stock prices and the popularity and sentiment measures.
 
 We conducted many Granger causality tests for all the companies to investigate the predictive properties of twitter popularity and sentiment analysis to predict the behaviour of the closing stock prices of the mentioned companies.   After doing this tests, we were able to confirm that the lag values output by the F-test match the respective time series. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment scores shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores are not relevant at all for this study.
 
