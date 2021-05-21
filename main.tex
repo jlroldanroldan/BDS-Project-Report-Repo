@@ -137,6 +137,7 @@ One would think that it is evident the urgent need to invest on green and climat
 % --------------------------------------------------------
 \subsection{Stock Market Understanding}
 % --------------------------------------------------------
+Our attempt to investigate the stock market behaviour naturally requires a 
     ETF Terms 
 Tickers - Public Companies
 Clean energy indices - S\&P clean energy index
@@ -565,27 +566,8 @@ We followed a similar approach to that of the previous section the compound sent
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{sentiment_time_series/Sunpower Closing Stock Prices_closing_price_compound_sentiment.png}
   \caption{Sunpower Closing and Sentiment Series}
+  \label{Sunpower Closing Stock Prices_closing_price_compound_sentiment}
 \end{figure}
-
-
-\begin{figure}[H]
-% \centering
-%   \begin{subfigure}[b]{0.5\textwidth}
-%   \includegraphics[width=\textwidth]{sentiment_time_series/Plug Power Closing Stock Prices_closing_price_compound_sentiment.png} 
-%   \caption{Plug Power Closing and Popularity Series}
-%   \label{fig:Ng1} 
-% \end{subfigure}
-\centering
-   \begin{subfigure}[b]{0.5\textwidth}
-   \includegraphics[width=\textwidth]{sentiment_time_series/Sunpower Closing Stock Prices_closing_price_compound_sentiment.png} 
-   \caption{Sunpower Closing and Popularity Series}
-   \label{fig:Ng1} 
-\end{subfigure}
-\caption{Sentiment and Closing Prices Time Series Part 2}
-\end{figure}
-
-
-
 
 % --------------------------------------------------------
 \subsection{Lag and Correlation Analysis} 
@@ -752,8 +734,10 @@ Figure \ref{all_stock_prices_2015_2021} illustrates that something is going on t
 \subsection{Granger Causality} 
 % --------------------------------------------------------
 The Granger causality results are presented in figures \ref{granger_first_solar} to \ref{granger_sunpower}. For each of the companies we did four F-tests. We used compound, positive, negative sentiment, as well as daily tweets to determine whether each series Granger causes the closing prices. The determine whether one of these series Granger causes closing prices, we looked for lag values which have a very low p value $(p < 0.05)$. Those lag with their respective $p$ and $F$ values are shown in the figures  \ref{granger_first_solar} to \ref{granger_sunpower}. \newline
-For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one for all of the companies. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.5$.
 
+For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one for all of the companies. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.05$. \newline
+
+\textbf{We can indeed check that the lag values output by the F-test do make sense with the time series plot in figures \ref{First Solar Closing Stock Prices_closing_price_daily_tweets} to \ref{Sunpower Closing Stock Prices_closing_price_compound_sentiment}. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment score shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores is not relevant at all for this scenario.}
 
 \begin{figure}[H]
   \centering
