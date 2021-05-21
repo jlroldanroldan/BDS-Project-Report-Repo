@@ -490,45 +490,53 @@ To get an idea of the big picture from the sentiment analysis results, we plotte
 
 
 % --------------------------------------------------------
-\subsection{Popularity Time Series} 
+\subsection{Twitter Popularity and Stock Prices Series} 
 % --------------------------------------------------------
+After the initial data exploration. We plotted the Twitter popularity and the stock prices time series. We define the Twitter popularity simply as the daily count of tweets for the respective company. The plots in figures \ref{First Solar Closing Stock Prices_closing_price_daily_tweets} and \ref{Sunpower Closing Stock Prices_closing_price_daily_tweets} show these time series. To the reduce the noise of the daily tweets (popularity), we smooth the series taking the mean of a rolling window of 10 days. \newline 
 
-
+\textbf{We can observe, as depicted with the red boxes that there is certainly some similarity between the Twitter popularity and the closing stock prices with certain lag. This observation will be investigate using Granger causality, to determine whether the count of daily tweets Granger causes the stock prices.}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/First Solar Closing Stock Prices_closing_price_daily_tweets.png}
   \caption{First Solar Closing and Popularity Series}
+  \label{First Solar Closing Stock Prices_closing_price_daily_tweets} 
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/Siemens Gamesa Closing Stock Prices_closing_price_daily_tweets.png}
   \caption{Siemens Closing and Popularity Series}
+  \label{Siemens Gamesa Closing Stock Prices_closing_price_daily_tweets}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/Sunrun Closing Stock Prices_closing_price_daily_tweets.png}
   \caption{Sunrun Closing and Popularity Series}
+  \label{Sunrun Closing Stock Prices_closing_price_daily_tweets}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/Plug Power Closing Stock Prices_closing_price_daily_tweets.png}
   \caption{Plug Power Closing and Popularity Series}
+  \label{Plug Power Closing Stock Prices_closing_price_daily_tweets}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{popularity_time_series/Sunpower Closing Stock Prices_closing_price_daily_tweets.png}
   \caption{Sunpower Closing and Popularity Series}
+  \label{Sunpower Closing Stock Prices_closing_price_daily_tweets}
 \end{figure}
 
 
-% .......................................
-\subsubsection{Sentiment Analysis  Vs Stock Prices Series} 
-% .......................................
+% --------------------------------------------------------
+\subsection{Compound Sentiment and Stock Prices Series} 
+% --------------------------------------------------------
+We followed a similar approach to that of the previous section the compound sentiment and closing stock prices. Nevertheless,  just by inspection, there is not many clear similarities in the two series. This observation will be investigated as well in the next sections.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth, height =1.5in]{sentiment_time_series/First Solar Closing Stock Prices_closing_price_compound_sentiment.png}
