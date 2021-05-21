@@ -114,14 +114,12 @@
 % ========================================================
 % ========================================================
 The usage of alternative data sources such as Twitter feeds, news articles and search queries for predicting financial markets has been increasingly receiving attention in industry and academia. The authors in \cite{DBLP:journals/corr/abs-1010-3003} have used used Twitter feeds to investigate the correlation between the public mood and the value of the Dow Jones Industrial average. They used Opinion Finder (OF) and Google-Profile of Mood States (GPOMS) to track the sentiment mood collective mood. The authors also used a Granger causality analysis and Self-Organizing Fuzzy Neural Network to determine whether the collective mood is indeed correlated to the values of the DJIA, and successfully found an accuracy of 87.6 percent in predicting the daily behavior  of this index. \\
-Authors in \cite{8713246} have used news articles besides Twitter feeds as an additional alternative data source. The authors used Opinion Finder (OF) and Stanford Natural Language Processing Programming Interface (SNLP) to do the sentiment analysis of these sources. Furthermore, they adopted a  Time-based Term Frequency and Inverse Document Frequency (TF-IDF) to  normalize the frequency of terms and used it to cluster terms using clustering algorithms. In this work the authors also dr
+Authors in \cite{8713246} have used news articles besides Twitter feeds as an additional alternative data source. The authors used Opinion Finder (OF) and Stanford Natural Language Processing Programming Interface (SNLP) to do the sentiment analysis of these sources. Furthermore, they adopted a  Time-based Term Frequency and Inverse Document Frequency (TF-IDF) to  normalize the frequency of terms and used it to cluster terms using clustering algorithms. In this work the authors also dr \hl{incomplete?}
 d correlation analysis and Granger causality as well as other linear regression models to study the correlation between the collective mood from these data sources and the stock market behavior of various entities in Australia. 
 
 % ========================================================
 \section{Business Understanding}
 % ========================================================
-\hl{Must finish - Understanding the stock market and terminologies, and unders}
-
 % -------------------------------------------------------
 \subsection{Background}
 % -------------------------------------------------------
@@ -140,50 +138,13 @@ One would think that it is evident the urgent need to invest on green and climat
 %    ETF Terms 
 %Tickers - Public Companies
 %Clean energy indices - S\&P clean energy index
-Our attempt to investigate the stock market behaviour naturally requires a basic understanding of the stock market. More specifically, we focused on aspects which could lead us to narrow down certain public companies to track through their tickers. The value of a public company's stock can be retrieved by looking up their respective tickers. We discovered Exchange Traded Fund (ETF), which is a type of security that tracks an index, commodity, sector, or other asset, but can be traded like a stock. ETF can track a ticker as well. Market indicies proved very useful - they are hypothetical portfolios used to track specific segments of the market. They would include important tickers to keep track for that specific market sector. Through ETF and clean energy indicies such as the S\&P energy index, we were able to identify a number of companies we could focus on for our purposes.
-
-\hl{check for correctness. etf definition from https://www.investopedia.com/terms/e/etf.asp}
-\hl{Must finish}
-% --------------------------------------------------------
-\subsection{Clean and Green Energy Industry }
-% --------------------------------------------------------
-Along with the stock market, we also needed to understand more about the clean and green energy industry. We started by looking into major events or global concern regarding clean energy. Some major issues gaining attention include:
-\begin{enumerate}
-    \item Warming of the ocean of more than 0.6 degrees Fahrenheit
-    \item Increase of 2.12 degrees Fahrenheit of the planet’s average surface temperature.
-    \item Average lost of 279, and 148 billion tons of ice per year on Greenland and the Antarctica, respectively
-\end{enumerate}
-
-We then surveyed the top green energy companies. \hl{We achieved this by?} The majority of them seem to be in \hl{solar and wind energy industry?}. 
-
-Through our survey into clean and green energy industry combined with our investigation into the stock market, we identified the following companies as market leaders in clean and green energy and focus on them for the project.
-\hl{double check}
-
-\textbf{Market Leaders }
-\begin{enumerate}
-    \item First Solar
-    \item Siemens Gamesa
-    \item Sunrun
-    \item Plug Power
-    \item Sun power 
-    \item Enphase 
-    \item Merdian 
-\end{enumerate}
-
-
-
+Our attempt to investigate the stock market behaviour naturally requires a basic understanding of the stock market. More specifically, we focused on aspects which could lead us to narrow down certain public companies to track through their tickers. The value of a public company's stock can be retrieved by looking up their respective tickers. We discovered Exchange Traded Fund (ETF), which is a type of security that tracks an index, commodity, sector, or other asset, but can be traded like a stock. ETF can track a ticker as well. Market indicies proved very useful - they are hypothetical portfolios used to track specific segments of the market. They would include important tickers to keep track for that specific market sector. Through ETF and clean energy indicies such as the S\&P energy index, we were able to identify a number of companies we could focus on for our purposes.  The companies we decided to include for our study are First Solar, Siemens Gamesa, Sunrun, Plug Power, Sunpower, and Plug Power. Another factor we used to choose these companies were their popularity and activity on Twitter, since this was essential for our work. 
 
 
 % ========================================================
 \section{Data Understanding}
 % ========================================================
-\hl{highlight}
-
-Data Understanding phase of CRISP- DM Framework focus on collecting the data, describing and exploring the data.
-This stage comprises of four key steps to understand the available data, and identify new relevant data in order to solve the business problem. 
-
-
-
+Data Understanding phase of CRISP- DM Framework focuses on collecting the data, describing and exploring the data. This stage comprises of four key steps to understand the available data, and identify new relevant data in order to solve the business problem. 
 
 % --------------------------------------------------------
 \subsection{Collection of Initial Data} % initial data collection report
@@ -191,18 +152,17 @@ This stage comprises of four key steps to understand the available data, and ide
 For this project, we collected three sets of data.
 
 \subsubsection{Twitter Data}
-The Twitter Data was obtained from the official Twitter API. We were able to obtain an Academic License which allows us to collect up to 10 million tweets per month. For our purposes, we collected around 1 million tweets for the 7 companies identified in the business understanding phase from 2011 to 2020 using the full archive end point. With the streaming API, we also collected around 1500 tweets for each company daily.
+The Twitter Data was obtained from the official Twitter API. We were able to obtain an Academic License which allows us to collect up to 10 million tweets per month. For our purposes, we collected around 1 million tweets for the five companies identified in the business understanding phase from 2011 to 2020 using the full archive end point. With the streaming API, we also collected around 1500 tweets for each company daily.
 
 \subsubsection{News Article Data}
 The News article data was collected using Bing News Search API. We used the Basic License, which gave 1000 requests per month. Each request gave up to 100 news articles, which could include duplicates from previous queries. The API also only retains articles up to one month old. This was naturally very limited. We were able to collect around 200 unique news articles per company for one month.
 
 \subsubsection{Stock Prices Data}
 To collect the stock price data, we used the open-source Alpha Vantage API. It uses a ticker based search, allowing us to look up each company's stock directly. We collected data for each company with the longest duration allowed.
-% --------------------------------------------------------
-\subsection{Describe Data} % data description report 
-% --------------------------------------------------------
-\hl{Describe data — for explicit information: Once you have identified the data set, you need to describe its contents and explore insights to better understand the data and its business implications.}
 
+% --------------------------------------------------------
+\subsection{Description of Datasets} % data description report 
+% --------------------------------------------------------
 \subsubsection{Twitter Data}
 The query returned by the Twitter API is a JSON file. Each object in the file has the following fields:
 
@@ -212,11 +172,7 @@ The query returned by the Twitter API is a JSON file. Each object in the file ha
     \item Author ID
     \item Tweet text
     \item Hashtags
-    \item \dots
 \end{enumerate}
-
-\hl{check for correctness}
-
 
 \subsubsection{News Article Data}
 The query returned by the Bing News Search API is a JSON file. It included a description of the search, and the list of articles returned by the query. Every article returned have the following fields:
@@ -228,7 +184,6 @@ The query returned by the Bing News Search API is a JSON file. It included a des
     \item Description
     \item Provider
     \item URL
-    \item \dots
 \end{enumerate}
 
 Not all data fields are always filled in, but the ones listed seem to be consistently available.
@@ -247,14 +202,11 @@ The stock prices data for a certain company (ticker) given by AlphaVantage API i
 
 The time stamps values are in day, and the other fields are the corresponding values of the company for that day.
 
-\hl{please check for correctness, initial data before cleaning, no derived values.}
-
 % --------------------------------------------------------
 \subsection{Exploratory Data Analysis} % data exploration report 
 % --------------------------------------------------------
 This phase of the project is a critical part of data understanding, it is exploring the data through plotting charts of various kinds with various combinations. Following types of insights can be achieved through plots/graphs. a) Spotting outlier values b)
 Observing trends of variables (increasing/decreasing) etc.c) Observing correlation and use fullness of variables  in context and scope of the problem at hand
-
 
 \subsubsection{Stock prices - EDA}
 \textbf{Attributes' Predicting Value Assessment }
@@ -267,46 +219,47 @@ As discussed above, from the API we used to collect the stock price provided var
     \item Volume
     \item Delta - derived attribute(|daily high - daily low| )
 \end{enumerate}
-Out of all these attributes rather than using every single we one separately and then concluding if it is useful or not we on the other hand decided to apply Auto-correlation based analysis for time series which allowed us to approximate the predicting power of each of the given series based on the randomness it comprises of and eliminated the non-useful ones. 
-\\Autocorrelation, also known as serial correlation, it is the correlation of a series with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them and based on the results of this type of computed correlation we are able to approximate the randomness that a particular series comprises and discard it if there it is an underlying characteristic of it made obvious using the results.
-\\ To interpret the result, we should know that if the auto-correlation plot lines lie very close to zero then it can be said that the given series corresponding to one any of the attribute under consideration is random and hence not useful for the time series analysis.
+Out of all these attributes rather than using every single we one separately and then concluding if it is useful or not we on the other hand decided to apply Auto-correlation based analysis for time series which allowed us to approximate the predicting power of each of the given series based on the randomness it comprises of and eliminated the non-useful ones. \newline
 
-\\ Performing this whole process on all of the given attributes we learnt that the delta attribute is pretty useless as seen in figure (x) and out of the rest, all exhibit the same patter =n hence using any one of it will suffice. We chose to use the "closing price" attribute series. 
+Autocorrelation, also known as serial correlation, it is the correlation of a series with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them and based on the results of this type of computed correlation we are able to approximate the randomness that a particular series comprises and discard it if there it is an underlying characteristic of it made obvious using the results. \newline
+
+To interpret the result, we should know that if the auto-correlation plot lines lie very close to zero then it can be said that the given series corresponding to one any of the attribute under consideration is random and hence not useful for the time series analysis. Performing this whole process on all of the given attributes we learned that the delta attribute is pretty useless as seen in figure \ref{Stock Price Attribute Assessment - Predicting Power/Usefulness for time series Analysis} and out of the rest, all exhibit the same pattern. Therefore, using any one of it will suffice. We chose to use the "closing price" attribute series. 
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/autocorr.PNG}
   \caption{Stock Price Attribute Assessment - Predicting Power/Usefulness for time series Analysis}
-%   \label{fig:duck}
+  \label{Stock Price Attribute Assessment - Predicting Power/Usefulness for time series Analysis}
 \end{figure}
 
-
-
 \textbf{Closing Price Trend Plots}
-Since we have decided to move forward with the closing price attribute only, we then explored the individual trend lines for the companies under consideration. This plot has two parts where Figure(2) shows the trend of every stocks closing price for the maximum data available and then figure(3) shows the same but a deep dive and closer look at the trend for a single latest year only. The granularity of figure(1) is Yearly quarters where as for the second plot in figure(2) the granularity is of yearly weeks.
+Since we have decided to move forward with the closing price attribute only, we then explored the individual trend lines for the companies under consideration. This plot has two parts where Figure \ref{Stock Prices- Maximum Time Period for every company available} shows the trend of every stocks closing price for the maximum data available and then figure \ref{stock_prices_all_2019t20} shows the same but a deep dive and closer look at the trend for a single latest year only. The granularity of figure \ref{Stock Prices- Maximum Time Period for every company available} is yearly quarters where as for the second plot in figure \ref{stock_prices_all_2019t20} the granularity is of yearly weeks.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/allstocks.png}
   \caption{Stock Prices- Maximum Time Period for every company available}
-%   \label{fig:duck}
+  \label{Stock Prices- Maximum Time Period for every company available}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/stock_prices_all_2019t20.png}
   \caption{Stock Prices- 2019 - 2020}
-%   \label{fig:duck}
+  \label{stock_prices_all_2019t20}
 \end{figure}
 
 
 
 
 \subsubsection{Twitter Data - Word Clouds}
-In the figures(4) and (5) we can see the the word cloud plots for the raw but cleaned twitter data. By raw we mean to specify that it not characterized by sentiment yet rather only split and segregated over individual companies. It was interesting to see what concepts overpowered each of the companies and did actually provide a very good idea of the most important strings attached to each particular company. A good example of it was for siemens where we clearly saw visible focus on solar and wind energy whereas in the remaining one can easily conclude that there wasn't much of he talk around or relevant to wind energy. Another good use of this word-cloud analysis was that is gave us sound basis and reasoning to exclude Tesla's solar power company i.e "Solar City" because one could easily see it being overpowered by Elon Musk related and Tesla related stuff leaving the company itself to be quite insignificant. 
+In the figures \ref{complete_wordcloud2} and \ref{fig:sfig2} we can see that the word cloud plots for the raw but cleaned twitter data. By raw we mean to specify that it not characterized by sentiment yet rather only split and segregated over individual companies. It was interesting to see what concepts overpowered each of the companies and did actually provide a very good idea of the most important strings attached to each particular company. A good example of it was for Siemens where we clearly saw visible focus on solar and wind energy whereas in the remaining one can easily conclude that there wasn't much of he talk around or relevant to wind energy. Another good use of this word-cloud analysis was that is gave us sound basis and reasoning to exclude Tesla's solar power company i.e "Solar City" because one could easily see it being overpowered by Elon Musk related and Tesla related stuff leaving the company itself to be quite insignificant. 
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{images/complete_wordcloud2.png}
   \caption{Word cloud - All Companies Combined}
-%   \label{fig:duck}
+  \label{complete_wordcloud2}
 \end{figure}
 
 \begin{figure}[H]
@@ -347,12 +300,13 @@ In the figures(4) and (5) we can see the the word cloud plots for the raw but cl
 
 
 \subsubsection{Author id - distribution}
-In this small analysis we applied methods for elbow analysis which sets the foundation and is usually used to identify the cut-off for the use of 80-20 rule. The 80-20 rule itself is characterized generally as 80$perc$ of contribution from 20$perc$ population or any data measures for that matter which in our case was for the idea that we were able to find the top 2600 tweet authors that were contributing in forming the 75$perc$ o twitter data that we collected. This analysis cane be useful later when we make modifications to approaches we test for data collected where we can employ these results and collect data only for those 2600 authors or since we know they are sort of the influencers or top contributers that are forming the opinion of the crowd we start following their views directly on other domains and aspects as well. This will turn out to be useful later but fir the scope of this project we have not made use of its discussed applications for now.
+In this small analysis we applied methods for elbow analysis which sets the foundation and is usually used to identify the cut-off for the use of 80-20 rule as shown in figure \ref{author}. The 80-20 rule itself is characterized generally as 80$\%$ of contribution from 20$\%$ population or any data measures for that matter which in our case was for the idea that we were able to find the top 2600 tweet authors that were contributing in forming the 75$\%$ of twitter data that we collected. This analysis can be useful later when we make modifications to approaches we test for data collected where we can employ these results and collect data only for those 2600 authors or since we know they are sort of the influencers or top contributors that are forming the opinion of the crowd we start following their views directly on other domains and aspects as well. This will turn out to be useful later but first the scope of this project we have not made use of its discussed applications for now.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{images/author.png}
   \caption{Tweet Author Importance - 80/20 rule cut-off identification}
-%   \label{fig:duck}
+  \label{author}
 \end{figure}
 
 
@@ -361,8 +315,6 @@ In this small analysis we applied methods for elbow analysis which sets the foun
 \section{Data Preparation}
 % ========================================================
 After having understood the data that we have collected and that which is available to us along with the sense of how we can make it useful for our particular problem we now move on to verify data quality and to remove errors from it so that we are then able to construct the intermediate forms and representations of it which are then finally integrated together to form inputs for the modeling step.
-\hl{Must finish}
-
 
 % --------------------------------------------------------
 \subsection{Data selection} % select data
@@ -833,7 +785,7 @@ An interesting learning point was that due to pre 2020-July period for the green
 
 We conducted many Granger causality tests for all the companies to investigate the predictive properties of twitter popularity and sentiment analysis to predict the behaviour of the closing stock prices of the mentioned companies.   After doing this tests, we were able to confirm that the lag values output by the F-test match the respective time series. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment scores shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores are not relevant at all for this study.
 
-For future studies we would like to expand the list of companies in the green industry sector as well as other industries to investigate how well our conclusions generalize to other scenarios. We would also like investigate other alternative data sources such as satellite imagery, or other weather related data that could have a potential impact on the performance of renewable energy companies. We would also like to use other features of the Twitter API such as likes, or other engagement actions that could enrich our models. 
+For future studies, we would like to expand the list of companies in the green industry sector as well as other industries to investigate how well our conclusions generalize to other scenarios. We would also like investigate other alternative data sources such as satellite imagery, or other weather related data that could have a potential impact on the performance of renewable energy companies. We would also like to use other features of the Twitter API such as likes, or other engagement actions that could enrich our models. 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample}
 
