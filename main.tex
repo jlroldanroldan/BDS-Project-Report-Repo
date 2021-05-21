@@ -137,21 +137,27 @@ One would think that it is evident the urgent need to invest on green and climat
 % --------------------------------------------------------
 \subsection{Stock Market Understanding}
 % --------------------------------------------------------
-Our attempt to investigate the stock market behaviour naturally requires a 
-    ETF Terms 
-Tickers - Public Companies
-Clean energy indices - S\&P clean energy index
+%    ETF Terms 
+%Tickers - Public Companies
+%Clean energy indices - S\&P clean energy index
+Our attempt to investigate the stock market behaviour naturally requires a basic understanding of the stock market. More specifically, we focused on aspects which could lead us to narrow down certain public companies to track through their tickers. The value of a public company's stock can be retrieved by looking up their respective tickers. We discovered Exchange Traded Fund (ETF), which is a type of security that tracks an index, commodity, sector, or other asset, but can be traded like a stock. ETF can track a ticker as well. Market indicies proved very useful - they are hypothetical portfolios used to track specific segments of the market. They would include important tickers to keep track for that specific market sector. Through ETF and clean energy indicies such as the S\&P energy index, we were able to identify a number of companies we could focus on for our purposes.
 
+\hl{check for correctness. etf definition from https://www.investopedia.com/terms/e/etf.asp}
 \hl{Must finish}
 % --------------------------------------------------------
 \subsection{Clean and Green Energy Industry }
 % --------------------------------------------------------
-Top Green Energy company - survey
-Major events or global concern regarding clean energy
-Some major issues gaining attention:
-Warming of the ocean of more than 0.6 degrees Fahrenheit
-Increase of 2.12 degrees Fahrenheit of the planet’s average surface temperature.
-Average lost of 279, and 148 billion tons of ice per year on Greenland and the Antarctica, respectively
+Along with the stock market, we also needed to understand more about the clean and green energy industry. We started by looking into major events or global concern regarding clean energy. Some major issues gaining attention include:
+\begin{enumerate}
+    \item Warming of the ocean of more than 0.6 degrees Fahrenheit
+    \item Increase of 2.12 degrees Fahrenheit of the planet’s average surface temperature.
+    \item Average lost of 279, and 148 billion tons of ice per year on Greenland and the Antarctica, respectively
+\end{enumerate}
+
+We then surveyed the top green energy companies. \hl{We achieved this by?} The majority of them seem to be in \hl{solar and wind energy industry?}. 
+
+Through our survey into clean and green energy industry combined with our investigation into the stock market, we identified the following companies as market leaders in clean and green energy and focus on them for the project.
+\hl{double check}
 
 \textbf{Market Leaders }
 \begin{enumerate}
@@ -205,7 +211,7 @@ The query returned by the Twitter API is a JSON file. Each object in the file ha
     \item Tweet ID
     \item Author ID
     \item Tweet text
-    \item hashtags
+    \item Hashtags
     \item \dots
 \end{enumerate}
 
@@ -737,7 +743,7 @@ The Granger causality results are presented in figures \ref{granger_first_solar}
 
 For each company, different series Granger causes the closing prices at different lags so we cannot make a definitive claim about the effectiveness of one series with respect to another one for all of the companies. Nevertheless, we can observe that the amount of daily tweets is the most successful at Granger causing the closing prices except for First Solar.  It is worth noting that the figure only some of the lags with $p < 0.05$. \newline
 
-\textbf{We can indeed check that the lag values output by the F-test do make sense with the time series plot in figures \ref{First Solar Closing Stock Prices_closing_price_daily_tweets} to \ref{Sunpower Closing Stock Prices_closing_price_compound_sentiment}. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment score shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores is not relevant at all for this scenario.}
+\textbf{We can indeed check that the lag values output by the F-test do make sense with the time series plots in figures \ref{First Solar Closing Stock Prices_closing_price_daily_tweets} to \ref{Sunpower Closing Stock Prices_closing_price_compound_sentiment}. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment scores shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores is not relevant at all for this scenario.}
 
 \begin{figure}[H]
   \centering
@@ -823,12 +829,11 @@ Top 20 key words for each company have been computed but it varies depending on 
 % ========================================================
 After doing extensive work on implementing the methodology we had in mind for solving the identified problem statement of \textbf{"Using Twitter and news article data to predict stock market prices for green energy companies”} we have understood the underlying relationship to some extent after several iterations. \newline
 
-The main highlights were that we see good results conforming to all the series of analysis we applied in the way to reach the final comparative time series plots. An interesting learning point was that due to pre 2020-July period for the green energy industry there was not much going on and so very little margin to explore the highest potential of data driven decisions but the post July-2020 times did put a lot in perspective and so we also see that towards the end of the time series there is significant similarity between the closing stock prices and the popularity and sentiment measures. \newline 
+An interesting learning point was that due to pre 2020-July period for the green energy industry there was not much going on and so very little margin to explore the highest potential of data driven decisions but the post July-2020 times did put a lot in perspective and so we also see that towards the end of the time series there is significant similarity between the closing stock prices and the popularity and sentiment measures. \newline 
 
-There was similarity and this similarity in trend had to be validated using to know whether the metrics that we are testing are the ones actually causing the change as well or not, this was done using Granger Causality and we were hence able to conclude from the results of Granger Causality analysis that our metrics are indeed the Granger Cause for the rise and fall which gives us immense power to manipulate this predictive insight and use it refined data driven decision that are better than intuition of investors and if not even better, they complement their intuition as well. Another learning point it highlight is that the causation pattern indeed is not exactly similarly driven for every company in regard to stock prices, for some its extremely aligned like Plug Power and Sun Power( Fig 31 a and b) whereas for others its matching the pace to some extent. Hence, we would say that this series of analysis proves to be quite useful and can be further refined and tuned to perform better. We can also tune it in ways that since we have been able to include multiple sentiments we might discover further groups within the green energy industry such that one groups corresponds well and is predictively driven by maybe the positive sentiment whereas the other group by the negative one. The potential to come up with new measure against the closing price and finding sub-groupings within the green energy companies lies as further opportunities to take this project ahead.
+We conducted many Granger causality tests for all the companies to investigate the predictive properties of twitter popularity and sentiment analysis to predict the behaviour of the closing stock prices of the mentioned companies.   After doing this tests, we were able to confirm that the lag values output by the F-test match the respective time series. Specifically, we can observe that the lag values do match with the shift of the daily tweets and the closing prices, indicating that twitter popularity does predict up to a certain extent the closing prices. In general, we can also see that sentiment scores shows to be less effective at Granger causing values of closing prices, and that for the companies Sunrun, Plug Power, and Sunpower, the sentiment scores are not relevant at all for this study.
 
-
-
+For future studies we would like to expand the list of companies in the green industry sector as well as other industries to investigate how well our conclusions generalize to other scenarios. We would also like investigate other alternative data sources such as satellite imagery, or other weather related data that could have a potential impact on the performance of renewable energy companies. We would also like to use other features of the Twitter API such as likes, or other engagement actions that could enrich our models. 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample}
 
