@@ -309,12 +309,11 @@ In this small analysis we applied methods for elbow analysis which sets the foun
   \label{author}
 \end{figure}
 
-
-
 % ========================================================
 \section{Data Preparation}
 % ========================================================
 After having understood the data that we have collected and that which is available to us along with the sense of how we can make it useful for our particular problem we now move on to verify data quality and to remove errors from it so that we are then able to construct the intermediate forms and representations of it which are then finally integrated together to form inputs for the modeling step.
+
 
 % --------------------------------------------------------
 \subsection{Data selection} % select data
@@ -328,7 +327,6 @@ For Twitter data, we retained the following fields:
     \item Tweet text
 \end{enumerate}
 
-\hl{check for correctness}
 
 \subsubsection{News Article Data}
 For news article data, we retained the following fields:
@@ -342,8 +340,6 @@ For news article data, we retained the following fields:
 \subsubsection{Stock Price Data}
 For stock price data, we simply retained all data from the API as they are.
 
-\hl{check for correctness}
-
 % --------------------------------------------------------
 \subsection{Clean Data} 
 % --------------------------------------------------------
@@ -351,7 +347,7 @@ For stock price data, we simply retained all data from the API as they are.
 To perform downstream tasks such as sentiment analysis, the text data from Twitter and news articles must be cleaned. For Twitter, the tweet text was cleaned, and for news articles, the title, combined into one field with the description, was cleaned. We cleaned the data with the following steps:
 
 \begin{enumerate}
-    \item Remove punctuation - Remove all punctuations from the sentences.
+    \item Remove punctuation - Remove all punctuation from the sentences.
     \item Tokenization - Transform the sentences into a list of words that can be found in the sentence.
     \item Remove stop words - Remove all English stop words, which do not contribute to the sentiment.
     \item Stemming - Turn all words into their root (stem) form.
@@ -368,13 +364,12 @@ To perform downstream tasks such as sentiment analysis, the text data from Twitt
 %\\merge all three data sources
 
 \subsubsection{Twitter and News Article Data}
-Using the cleaned text data from above, for each entry in the Twitter and news article data we also created a field for sentiment. Using the NLTK SentimentIntensity Analyizer, we found the sentiment for each body of text. These were used to construct time series in modeling.
-\hl{double check}
+Using the cleaned text data from above, for each entry in the Twitter and news article data we also created a field for sentiment. Using the NLTK Sentiment Intensity Analyzer, we found the sentiment for each body of text. These were used to construct time series in modeling.
 
 % --------------------------------------------------------
 \subsection{Sentiment Analysis} 
 % --------------------------------------------------------
-The branch of Data Mining corresponding to use of machine learning algorithms to categorize various input samples of relevant text into the dominant and underlying contextual sentiment or notion that characterizes the tone of the text. A sentence “The movie was not bad at all” contains words like bad but the context and underlying notion of it contextually is rather a positive comment regarding it the subject under discussion, hence sentiment analysis makes use of ML techniques, applied strategically and efficiently to classify the text into certain categories of sentiment/nature of the text. Most commonly positive or negative sentiment.
+The branch of data mining corresponding to use of machine learning algorithms to categorize various input samples of relevant text into the dominant and underlying contextual sentiment or notion that characterizes the tone of the text. A sentence “The movie was not bad at all” contains words like bad but the context and underlying notion of it contextually is rather a positive comment regarding it the subject under discussion, hence sentiment analysis makes use of ML techniques, applied strategically and efficiently to classify the text into certain categories of sentiment/nature of the text. Most commonly positive or negative sentiment.
 For our project we aimed to experiment and maximize the best approximation by going through various options available in the open-source community but ended up testing two sentiment analyzer tool options available and known as the best ones yet. We chose to employ some of the well established and well known pre-trained sentiment analyzer model available as open-source tools. These included
 \begin{enumerate}
     \item Natural Language Tool Kit Sentiment Analyzer for python
@@ -382,21 +377,24 @@ For our project we aimed to experiment and maximize the best approximation by go
 \end{enumerate}
 
 \paragraph{NLTK}
-A powerful built-in machine learning operation to obtain insights from linguistic data. It is an open-source library available for python, it is designed to work with human language data making sentiment analysis a necessary tool of it. It provides the complete set of tools required for contextual mining and hence very popular and known for its performance among the text mining community and industry. To be specific we used the \textbf{SentimentIntensityAnalyzer} model instance followed by the polarity score measures it computes.
-\\Returned Polarity measures per text sample:
+A powerful built-in machine learning operation to obtain insights from linguistic data. It is an open-source library available for python, it is designed to work with human language data making sentiment analysis a necessary tool of it. It provides the complete set of tools required for contextual mining and hence very popular and known for its performance among the text mining community and industry. To be specific we used the \textbf{SentimentIntensityAnalyzer} model instance followed by the polarity score measures it computes. \newline
+
+Returned Polarity measures per text sample:
 \begin{enumerate}
     \item Positive Sentiment - between 0 and 1 with zero being lowest positivity score and 1 being highest
     \item Negative Sentiment : between 0 and 1 with zero being lowest positivity score and 1 being highest
-    \item Compound Sentiment: Less then zero signifies negative sentiment and greater than zero signifies positive sentiment. 0 score value here corresponds to neutral sentiment
+    \item Compound Sentiment: Less than zero signifies negative sentiment and greater than zero signifies positive sentiment. 0 score value here corresponds to neutral sentiment
     \item Neutral Sentiment
-\end{enumerate}
+\end{enumerate} \newline
+
 We chose to construct time series for Positive, Negative and Compound sentiments to maximize the potential for finding some useful correlation with any of the three. Neutral Sentiment measure was redundant hence not used further.
 
 \paragraph{Stanford CoreNLP}
-CoreNLP enables users to derive linguistic annotations for text, including token and sentence boundaries, parts of speech, named entities, numeric and time values, dependency and constituency parses, co-reference, sentiment, quote attributions, and relations. CoreNLP currently supports 6 languages: Arabic, Chinese, English, French, German, and Spanish. For this analysis we made use of the sentiment annotator of the CoreNLP instance. Although it is a very powerful tool but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
+CoreNLP enables users to derive linguistic annotations for text. Although it is a very powerful tool, but following are a few issues that came-forth whiles using it which  made us choose and thus opt for the NLTK sentiment analysis and let go of this tool.
+
 \begin{enumerate}
     \item Slow speed
-    \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines
+    \item Extensive error debugging required to pin point the issues causing failure of a long run and then restarting the analysis, we did try to do it but it ended being an extensive and extreme wastage of time and resource power of our machines.
 \end{enumerate}
 
 
@@ -407,13 +405,6 @@ $$ Delta = |High - Low|$$
 
 "Delta" returns the absolute value of the change in stock price for a specific stock for that specific day. It can be thought of as a reduction function for the daily high and daily low.
 
-\hl{double check}
-
-% --------------------------------------------------------
-\subsection{Format Data } 
-% --------------------------------------------------------
-Since the stock and Twitter data extend back many years, the granularity of the data was reformatted to be weekly instead of daily. Respective values such as sentiment, delta were averaged over all values for that week.
-\hl{double cehck, could maybe delete this section}
 
 % ========================================================
 \section{Modeling and Evaluation}
